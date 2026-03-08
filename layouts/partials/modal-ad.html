@@ -3,9 +3,9 @@
   .modal-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     z-index: 9998;
     animation: modalFadeIn 0.3s ease;
   }
@@ -89,32 +89,36 @@
     z-index: 2;
   }
   .modal-headline-top {
-    font-size: 13px;
-    font-weight: 700;
-    color: rgba(255,255,255,0.9);
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
-  }
-  .modal-headline-amount {
-    font-size: 44px;
+    font-size: 14px;
     font-weight: 900;
     color: #fff;
-    line-height: 1.1;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.2);
-    letter-spacing: -1px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
   }
-  .modal-headline-amount span { font-size: 22px; font-weight: 700; }
+  .modal-headline-amount {
+    font-size: 56px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3), 0 0 40px rgba(255,255,255,0.15);
+    letter-spacing: -2px;
+    animation: modalAmountPop 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+  }
+  .modal-headline-amount span { font-size: 24px; font-weight: 700; }
   .modal-headline-sub {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700;
-    color: rgba(255,255,255,0.95);
-    margin-top: 4px;
+    color: #fff;
+    margin-top: 8px;
   }
   .modal-headline-sub em {
     font-style: normal;
-    background: rgba(255,255,255,0.2);
-    padding: 2px 8px;
-    border-radius: 4px;
+    background: rgba(255,255,255,0.25);
+    padding: 3px 12px;
+    border-radius: 6px;
+    animation: modalEmPulse 2s ease-in-out infinite;
   }
   .modal-bottom {
     background: #fff;
@@ -213,6 +217,8 @@
   @keyframes modalCoinBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
   @keyframes modalShimmer { 0% { left: -60%; } 50%, 100% { left: 120%; } }
   @keyframes modalPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+  @keyframes modalAmountPop { from { transform: scale(0.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  @keyframes modalEmPulse { 0%, 100% { background: rgba(255,255,255,0.25); } 50% { background: rgba(255,255,255,0.4); } }
 </style>
 
 <div class="modal-backdrop" id="modalBackdrop" onclick="closeModalAd()"></div>
