@@ -1,7 +1,6 @@
 ---
 title: "お問い合わせ"
-date: 2026-03-09
-draft: false
+date: 2026-03-08
 draft: false
 ---
 
