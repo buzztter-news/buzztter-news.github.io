@@ -27,8 +27,11 @@ img { max-width: 100%; height: auto; }
   justify-content: space-between;
   height: 56px;
 }
-.site-logo h1 { font-size: 1.4rem; color: #000; font-weight: 900; letter-spacing: 0.02em; }
+.site-logo { display: flex; align-items: center; gap: 8px; }
 .site-logo:hover { text-decoration: none; opacity: 1; }
+.logo-icon { flex-shrink: 0; }
+.logo-text { font-size: 1.25rem; color: #000; font-weight: 900; letter-spacing: -0.5px; }
+.logo-accent { color: #e53935; }
 .main-nav .nav-menu {
   list-style: none;
   display: flex;
