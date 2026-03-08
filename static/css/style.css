@@ -18,8 +18,7 @@ img { max-width: 100%; height: auto; }
 .site-header {
   background: #fff;
   border-bottom: 1px solid #e0e0e0;
-  position: sticky;
-  top: 0;
+  position: relative;
   z-index: 100;
 }
 .header-inner {
