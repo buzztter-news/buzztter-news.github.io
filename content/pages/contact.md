@@ -2,7 +2,7 @@
 title: "お問い合わせ"
 date: 2026-03-09
 draft: false
-type: "pages"
+draft: false
 ---
 
 当サイトに関するお問い合わせは、下記のGoogleフォームよりお願いいたします。

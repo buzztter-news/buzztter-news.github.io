@@ -2,7 +2,6 @@
 title: "運営者情報"
 date: 2026-03-09
 draft: false
-draft: false
 ---
 
 | 項目 | 内容 |
