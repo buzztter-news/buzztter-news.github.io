@@ -26,17 +26,11 @@
       {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
     </header>
 
-    {{ if .Params.image }}
+    {{ with .Params.image }}{{ if ne . "" }}
     <div class="article-eyecatch">
-      <img src="{{ .Params.image }}" alt="{{ .Title }}">
+      <img src="{{ . }}" alt="{{ $.Title }}">
     </div>
-    {{ else }}
-    <div class="article-eyecatch article-eyecatch--placeholder">
-      <div class="eyecatch-overlay">
-        {{ with .Params.categories }}{{ range . }}<span class="eyecatch-category">{{ . }}</span>{{ end }}{{ end }}
-      </div>
-    </div>
-    {{ end }}
+    {{ end }}{{ end }}
 
     <div class="article-body">
       {{ .Content }}
