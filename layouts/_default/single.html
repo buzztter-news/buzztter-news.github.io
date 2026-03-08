@@ -1,0 +1,74 @@
+{{ define "head" }}
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ .Description }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ .Permalink }}">
+{{ with .Params.image }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+<meta name="twitter:card" content="summary_large_image">
+{{ end }}
+
+{{ define "main" }}
+<div class="page-layout">
+  <article class="content-area article-single">
+    {{ partial "ad-top.html" . }}
+
+    <header class="article-header">
+      <div class="article-meta">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+        {{ with .Params.categories }}
+        {{ range . }}
+        <a href="{{ "categories/" | absURL }}{{ . | urlize }}/" class="category-tag">{{ . }}</a>
+        {{ end }}
+        {{ end }}
+      </div>
+      <h1 class="article-title">{{ .Title }}</h1>
+      {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
+    </header>
+
+    {{ with .Params.image }}
+    <div class="article-eyecatch">
+      <img src="{{ . }}" alt="{{ $.Title }}">
+    </div>
+    {{ end }}
+
+    <div class="article-body">
+      {{ .Content }}
+    </div>
+
+    {{ partial "ad-bottom.html" . }}
+
+    <footer class="article-footer">
+      {{ with .Params.tags }}
+      <div class="article-tags">
+        {{ range . }}
+        <a href="{{ "tags/" | absURL }}{{ . | urlize }}/" class="tag">#{{ . }}</a>
+        {{ end }}
+      </div>
+      {{ end }}
+    </footer>
+  </article>
+
+  {{ partial "sidebar.html" . }}
+</div>
+
+{{ $related := .Site.RegularPages.Related . | first 5 }}
+{{ with $related }}
+<section class="related-articles container">
+  <h2>関連記事</h2>
+  <div class="article-grid">
+    {{ range . }}
+    <article class="article-card">
+      <a href="{{ .Permalink }}">
+        <div class="card-body">
+          <div class="card-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+          </div>
+          <h3 class="card-title">{{ .Title }}</h3>
+        </div>
+      </a>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+{{ end }}
