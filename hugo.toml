@@ -1,7 +1,6 @@
 baseURL = "https://manatofujii-png.github.io/"
 languageCode = "ja"
 title = "トレンドニュースまとめ"
-theme = ""
 paginate = 12
 enableRobotsTXT = true
 
