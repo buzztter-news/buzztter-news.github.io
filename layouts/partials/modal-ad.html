@@ -1,0 +1,267 @@
+<!-- Modal Ad -->
+<style>
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 9998;
+    animation: modalFadeIn 0.3s ease;
+  }
+  .modal-ad {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100vw - 40px);
+    max-width: 380px;
+    z-index: 9999;
+    animation: modalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.08);
+  }
+  .modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.35);
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .modal-close:active { background: rgba(0,0,0,0.55); }
+  .modal-close svg { width: 16px; height: 16px; }
+  .modal-top {
+    background: linear-gradient(145deg, #ff0050 0%, #ff2d6a 30%, #ff6b3d 70%, #ffaa00 100%);
+    padding: 32px 24px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .modal-top::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .modal-coins {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 2;
+  }
+  .modal-coin {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    color: #b8860b;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2), inset 0 2px 4px rgba(255,255,255,0.4);
+    animation: modalCoinBounce 2s ease-in-out infinite;
+  }
+  .modal-coin:nth-child(1) { animation-delay: 0s; }
+  .modal-coin:nth-child(2) { animation-delay: 0.15s; }
+  .modal-coin:nth-child(3) { animation-delay: 0.3s; width: 52px; height: 52px; font-size: 24px; }
+  .modal-coin:nth-child(4) { animation-delay: 0.45s; }
+  .modal-coin:nth-child(5) { animation-delay: 0.6s; }
+  .modal-headline {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .modal-headline-top {
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .modal-headline-amount {
+    font-size: 44px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.1;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    letter-spacing: -1px;
+  }
+  .modal-headline-amount span { font-size: 22px; font-weight: 700; }
+  .modal-headline-sub {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.95);
+    margin-top: 4px;
+  }
+  .modal-headline-sub em {
+    font-style: normal;
+    background: rgba(255,255,255,0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .modal-bottom {
+    background: #fff;
+    padding: 20px 24px 24px;
+  }
+  .modal-urgency {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #e65100;
+  }
+  .modal-urgency-dot {
+    width: 8px;
+    height: 8px;
+    background: #ff3d00;
+    border-radius: 50%;
+    animation: modalPulse 1.2s ease-in-out infinite;
+  }
+  .modal-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .modal-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: #333;
+  }
+  .modal-feature-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .modal-feature:nth-child(1) .modal-feature-icon { background: #fff3e0; }
+  .modal-feature:nth-child(2) .modal-feature-icon { background: #e8f5e9; }
+  .modal-feature:nth-child(3) .modal-feature-icon { background: #fce4ec; }
+  .modal-feature strong { color: #ff0050; font-weight: 900; }
+  .modal-cta {
+    display: block;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #ff0050, #ff2d6a);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 900;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(255,0,80,0.35);
+    -webkit-tap-highlight-color: transparent;
+    letter-spacing: 0.5px;
+  }
+  .modal-cta:active { transform: scale(0.97); }
+  .modal-cta::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: rotate(25deg);
+    animation: modalShimmer 2.5s ease-in-out infinite;
+  }
+  .modal-cta-sub {
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    margin-top: 10px;
+    line-height: 1.4;
+  }
+  .modal-backdrop.modal-hidden, .modal-ad.modal-hidden { display: none; }
+  @keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes modalSlideUp { from { opacity: 0; transform: translate(-50%, -45%); } to { opacity: 1; transform: translate(-50%, -50%); } }
+  @keyframes modalCoinBounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  @keyframes modalShimmer { 0% { left: -60%; } 50%, 100% { left: 120%; } }
+  @keyframes modalPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+</style>
+
+<div class="modal-backdrop" id="modalBackdrop" onclick="closeModalAd()"></div>
+<div class="modal-ad" id="modalAd">
+  <button class="modal-close" onclick="closeModalAd()" aria-label="閉じる">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round">
+      <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
+    </svg>
+  </button>
+  <div class="modal-top">
+    <div class="modal-coins">
+      <div class="modal-coin">¥</div>
+      <div class="modal-coin">¥</div>
+      <div class="modal-coin">¥</div>
+      <div class="modal-coin">¥</div>
+      <div class="modal-coin">¥</div>
+    </div>
+    <div class="modal-headline">
+      <div class="modal-headline-top">TikTok Liteを見るだけで</div>
+      <div class="modal-headline-amount"><span>最大</span> 3,000<span>円分</span></div>
+      <div class="modal-headline-sub"><em>動画を見るだけ</em> でポイントが貯まる</div>
+    </div>
+  </div>
+  <div class="modal-bottom">
+    <div class="modal-urgency">
+      <div class="modal-urgency-dot"></div>
+      キャンペーン終了間近 ― 今だけの特別報酬
+    </div>
+    <div class="modal-features">
+      <div class="modal-feature">
+        <div class="modal-feature-icon">💰</div>
+        <div>アプリDL＋動画視聴で<strong>即3,000円相当</strong>GET</div>
+      </div>
+      <div class="modal-feature">
+        <div class="modal-feature-icon">✅</div>
+        <div>面倒な作業ゼロ、<strong>スキマ時間</strong>でOK</div>
+      </div>
+      <div class="modal-feature">
+        <div class="modal-feature-icon">🎁</div>
+        <div>ポイントは<strong>PayPay・Amazon</strong>に交換可能</div>
+      </div>
+    </div>
+    <a href="https://mttag.com/s/Nfo5tNa-FsMio/" rel="nofollow" class="modal-cta">無料ではじめる →</a>
+    <div class="modal-cta-sub">※ 招待リンク経由の登録限定キャンペーン<br>※ ポイント付与には条件があります</div>
+  </div>
+</div>
+<script>
+function closeModalAd() {
+  document.getElementById('modalBackdrop').classList.add('modal-hidden');
+  document.getElementById('modalAd').classList.add('modal-hidden');
+}
+</script>
