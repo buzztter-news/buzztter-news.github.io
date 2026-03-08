@@ -2,19 +2,19 @@
 title: "運営者情報"
 date: 2026-03-09
 draft: false
-layout: "single"
+draft: false
 ---
 
 | 項目 | 内容 |
 |------|------|
-| サイト名 | buzztter news |
-| サイトURL | https://buzztter-news.github.io/ |
-| 運営者 | buzztter news 編集部 |
+| サイト名 | buzzter news |
+| サイトURL | https://buzzter-news.github.io/ |
+| 運営者 | buzzter news 編集部 |
 | お問い合わせ | [お問い合わせページ](/pages/contact/) |
 
 ## サイト概要
 
-buzztter newsは、SNSや知恵袋で話題のトレンドニュースをわかりやすくまとめるニュースメディアです。芸能・エンタメ、スポーツ、社会・政治、IT・テクノロジー、生活・雑学など幅広いジャンルの情報をお届けします。
+buzzter newsは、SNSや知恵袋で話題のトレンドニュースをわかりやすくまとめるニュースメディアです。芸能・エンタメ、スポーツ、社会・政治、IT・テクノロジー、生活・雑学など幅広いジャンルの情報をお届けします。
 
 ## コンテンツポリシー
 
