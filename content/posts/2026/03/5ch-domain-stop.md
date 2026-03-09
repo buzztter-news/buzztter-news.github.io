@@ -24,6 +24,10 @@ image: ""
 
 {{< tweet user="tkzwgrs" id="2029836164476387367" >}}
 
+{{< affiliate >}}
+<a href='https://mttag.com/s/lVM3LgiRzrQ' rel='nofollow'><img src='https://mttag.com/banner/lVM3LgiRzrQ' alt='' style='max-width:100%;height:auto;' border='0' /></a>
+{{< /affiliate >}}
+
 これを受けて、ワトキンス氏は代替ドメイン**「5ch.io」への移行**をユーザーに呼びかけています。
 
 ただし、**5ch.ioでの閲覧は可能なものの、投稿（書き込み）は5ch.net経由で処理されるため、現在は書き込みができない状態**になっているとの報告が相次いでいます。つまり「読めるけど書けない」という中途半端な状況です。

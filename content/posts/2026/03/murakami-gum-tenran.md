@@ -11,7 +11,7 @@ image: ""
 {{< tweet "2030629006190719458" >}}
 
 {{< affiliate >}}
-<a href='https://mttag.com/s/i946xt1euvg' rel='nofollow'><img src='https://mttag.com/banner/i946xt1euvg' alt='' style='max-width:100%;height:auto;' border='0' /></a>
+<a href='https://mttag.com/s/lVM3LgiRzrQ' rel='nofollow'><img src='https://mttag.com/banner/lVM3LgiRzrQ' alt='' style='max-width:100%;height:auto;' border='0' /></a>
 {{< /affiliate >}}
 
 {{< ad-top >}}
