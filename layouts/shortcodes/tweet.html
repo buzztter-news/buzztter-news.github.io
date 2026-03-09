@@ -1,2 +1,2 @@
-<blockquote class="twitter-tweet"><a href="https://twitter.com/i/status/{{ .Get 0 }}">ポストを表示</a></blockquote>
+{{ $id := .Get "id" | default (.Get 0) }}<blockquote class="twitter-tweet"><a href="https://twitter.com/i/status/{{ $id }}">ポストを表示</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
