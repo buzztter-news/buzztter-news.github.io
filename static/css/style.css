@@ -342,6 +342,12 @@ img { max-width: 100%; height: auto; }
   .main-nav .nav-menu li a { padding: 12px 16px; }
 }
 
+/* モバイル専用広告 */
+.ad-mobile-only { display: none; text-align: center; margin-bottom: 16px; }
+@media (max-width: 768px) {
+  .ad-mobile-only { display: block; }
+}
+
 /* 印刷対応 */
 @media print {
   .site-header, .site-footer, .sidebar, .ad-slot, .affiliate-banner,
