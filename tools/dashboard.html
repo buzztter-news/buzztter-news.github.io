@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>buzzter news - ダッシュボード</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", sans-serif; background: #0f0f0f; color: #e0e0e0; min-height: 100vh; }
+  .header { background: #1a1a1a; border-bottom: 1px solid #333; padding: 16px 24px; display: flex; align-items: center; gap: 12px; }
+  .header h1 { font-size: 20px; font-weight: 700; }
+  .header h1 span { color: #ff3030; }
+  .header .status { margin-left: auto; font-size: 13px; color: #666; }
+  .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+  .section { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+  .section h2 { font-size: 16px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .section h2 .badge { background: #ff3030; color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #999; margin-bottom: 6px; }
+  input, textarea, select { width: 100%; background: #0f0f0f; border: 1px solid #333; color: #e0e0e0; border-radius: 8px; padding: 10px 12px; font-size: 14px; font-family: inherit; }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: #ff3030; }
+  textarea { resize: vertical; min-height: 120px; }
+  .form-row { margin-bottom: 14px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 24px; border: none; border-radius: 8px; font-size: 14px; font-weight: 700; cursor: pointer; transition: all 0.15s; }
+  .btn:active { transform: scale(0.97); }
+  .btn-primary { background: #ff3030; color: #fff; }
+  .btn-primary:hover { background: #e02020; }
+  .btn-secondary { background: #2a2a2a; color: #e0e0e0; }
+  .btn-secondary:hover { background: #333; }
+  .btn-deploy { background: #00c853; color: #fff; width: 100%; padding: 16px; font-size: 16px; }
+  .btn-deploy:hover { background: #00a844; }
+  .btn-group { display: flex; gap: 10px; margin-top: 16px; }
+  .log { background: #0a0a0a; border: 1px solid #222; border-radius: 8px; padding: 12px; font-family: "SF Mono", monospace; font-size: 12px; color: #888; max-height: 200px; overflow-y: auto; white-space: pre-wrap; line-height: 1.6; }
+  .log .success { color: #00c853; }
+  .log .error { color: #ff3030; }
+  .log .info { color: #4fc3f7; }
+  .ad-config { display: flex; flex-direction: column; gap: 8px; }
+  .ad-item { display: flex; align-items: center; gap: 10px; background: #0f0f0f; border: 1px solid #2a2a2a; border-radius: 8px; padding: 10px 12px; }
+  .ad-item input[type="checkbox"] { width: auto; accent-color: #ff3030; }
+  .ad-item label { margin: 0; color: #e0e0e0; font-size: 13px; flex: 1; }
+  .ad-item .ad-id { font-size: 11px; color: #666; font-family: monospace; }
+  .preview { background: #fff; color: #222; border-radius: 8px; padding: 20px; max-height: 300px; overflow-y: auto; font-size: 14px; line-height: 1.8; }
+  .quick-actions { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .quick-btn { background: #1a1a1a; border: 1px solid #333; border-radius: 8px; padding: 14px; text-align: center; cursor: pointer; transition: all 0.15s; }
+  .quick-btn:hover { border-color: #ff3030; background: #1f1a1a; }
+  .quick-btn .icon { font-size: 24px; margin-bottom: 6px; }
+  .quick-btn .label { font-size: 12px; color: #999; }
+  .template-chips { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  .chip { background: #2a2a2a; border: 1px solid #333; border-radius: 20px; padding: 6px 14px; font-size: 12px; cursor: pointer; transition: all 0.15s; }
+  .chip:hover, .chip.active { background: #ff3030; border-color: #ff3030; color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>buzzter <span>news</span></h1>
+  <div class="status" id="serverStatus">サーバー: 接続中...</div>
+</div>
+
+<div class="container">
+
+  <!-- クイックアクション -->
+  <div class="section">
+    <h2>クイックアクション</h2>
+    <div class="quick-actions">
+      <div class="quick-btn" onclick="openSite()">
+        <div class="icon">🌐</div>
+        <div class="label">サイトを開く</div>
+      </div>
+      <div class="quick-btn" onclick="openGitHub()">
+        <div class="icon">📦</div>
+        <div class="label">GitHub</div>
+      </div>
+      <div class="quick-btn" onclick="checkDeploy()">
+        <div class="icon">🔄</div>
+        <div class="label">デプロイ状況</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 記事作成 -->
+  <div class="section">
+    <h2>記事作成 <span class="badge">NEW</span></h2>
+
+    <div class="template-chips">
+      <div class="chip active" onclick="setTemplate('news')">ニュース</div>
+      <div class="chip" onclick="setTemplate('controversy')">炎上・賛否</div>
+      <div class="chip" onclick="setTemplate('howto')">対処法・解説</div>
+    </div>
+
+    <div class="form-row">
+      <label>タイトル</label>
+      <input type="text" id="title" placeholder="【炎上】〇〇が△△で批判殺到">
+    </div>
+
+    <div class="form-grid">
+      <div class="form-row">
+        <label>スラッグ（URL名）</label>
+        <input type="text" id="slug" placeholder="topic-name">
+      </div>
+      <div class="form-row">
+        <label>カテゴリ</label>
+        <select id="category">
+          <option value="芸能・エンタメ">芸能・エンタメ</option>
+          <option value="スポーツ">スポーツ</option>
+          <option value="社会・政治">社会・政治</option>
+          <option value="ネット">ネット</option>
+          <option value="ライフ">ライフ</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label>説明文（description）</label>
+      <textarea id="description" rows="2" placeholder="記事の概要を1〜2文で"></textarea>
+    </div>
+
+    <div class="form-row">
+      <label>タグ（カンマ区切り）</label>
+      <input type="text" id="tags" placeholder="村上宗隆, WBC2026, 天覧試合">
+    </div>
+
+    <div class="form-row">
+      <label>ツイート埋め込み（ID or URL）</label>
+      <input type="text" id="tweetId" placeholder="https://x.com/user/status/123456 or 123456">
+    </div>
+
+    <div class="form-row">
+      <label>本文</label>
+      <textarea id="body" rows="12" placeholder="記事本文をここに書く（Markdown対応）"></textarea>
+    </div>
+  </div>
+
+  <!-- 広告設定 -->
+  <div class="section">
+    <h2>広告配置</h2>
+    <div class="ad-config">
+      <div class="ad-item">
+        <input type="checkbox" id="adTweetBelow" checked>
+        <label for="adTweetBelow">ツイート直下 - ベストお薬</label>
+        <span class="ad-id">lVM3LgiRzrQ</span>
+      </div>
+      <div class="ad-item">
+        <input type="checkbox" id="adTop" checked>
+        <label for="adTop">記事上部（モバイルのみ）- FaceSwitch</label>
+        <span class="ad-id">i946xt1euvg</span>
+      </div>
+      <div class="ad-item">
+        <input type="checkbox" id="adBottom" checked>
+        <label for="adBottom">記事下部 - FaceSwitch</label>
+        <span class="ad-id">i946xt1euvg</span>
+      </div>
+      <div class="ad-item">
+        <input type="checkbox" id="adModal" checked>
+        <label for="adModal">モーダルポップアップ - TikTok Lite</label>
+        <span class="ad-id">自動（partial）</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 実行 -->
+  <div class="section">
+    <h2>実行</h2>
+    <div class="btn-group" style="margin-top:0; margin-bottom: 14px;">
+      <button class="btn btn-secondary" onclick="generatePreview()">プレビュー生成</button>
+      <button class="btn btn-primary" onclick="createArticle()">記事ファイル作成</button>
+    </div>
+    <button class="btn btn-deploy" onclick="deployAll()">🚀 デプロイ（git add → commit → push）</button>
+  </div>
+
+  <!-- ログ -->
+  <div class="section">
+    <h2>ログ</h2>
+    <div class="log" id="log">ダッシュボード起動完了。\n</div>
+  </div>
+
+</div>
+
+<script>
+const API = 'http://localhost:3456';
+
+// サーバー接続確認
+async function checkServer() {
+  try {
+    const res = await fetch(API + '/status');
+    const data = await res.json();
+    document.getElementById('serverStatus').textContent = `サーバー: 接続済み ✓`;
+    document.getElementById('serverStatus').style.color = '#00c853';
+  } catch(e) {
+    document.getElementById('serverStatus').textContent = 'サーバー: 未接続';
+    document.getElementById('serverStatus').style.color = '#ff3030';
+  }
+}
+
+function log(msg, type = '') {
+  const el = document.getElementById('log');
+  const cls = type ? ` class="${type}"` : '';
+  el.innerHTML += `<span${cls}>${new Date().toLocaleTimeString()} ${msg}</span>\n`;
+  el.scrollTop = el.scrollHeight;
+}
+
+function parseTweet(input) {
+  if (!input) return null;
+  // URL format: https://x.com/user/status/123456
+  const match = input.match(/status\/(\d+)/);
+  if (match) {
+    const userMatch = input.match(/(?:x\.com|twitter\.com)\/([^/]+)\/status/);
+    return { id: match[1], user: userMatch ? userMatch[1] : null };
+  }
+  // Just ID
+  if (/^\d+$/.test(input.trim())) return { id: input.trim(), user: null };
+  return null;
+}
+
+function generateMarkdown() {
+  const title = document.getElementById('title').value;
+  const description = document.getElementById('description').value;
+  const category = document.getElementById('category').value;
+  const tags = document.getElementById('tags').value.split(',').map(t => `"${t.trim()}"`).filter(t => t !== '""').join(', ');
+  const tweetInput = document.getElementById('tweetId').value;
+  const body = document.getElementById('body').value;
+  const tweet = parseTweet(tweetInput);
+
+  const adTweetBelow = document.getElementById('adTweetBelow').checked;
+  const adBottom = document.getElementById('adBottom').checked;
+
+  let md = `---
+title: "${title}"
+date: ${new Date().toISOString().replace(/\.\d+Z$/, '+09:00')}
+draft: false
+description: "${description}"
+categories: ["${category}"]
+tags: [${tags}]
+image: ""
+---
+
+`;
+
+  // ツイート埋め込み
+  if (tweet) {
+    if (tweet.user) {
+      md += `{{< tweet user="${tweet.user}" id="${tweet.id}" >}}\n\n`;
+    } else {
+      md += `{{< tweet "${tweet.id}" >}}\n\n`;
+    }
+    // ツイート下広告
+    if (adTweetBelow) {
+      md += `{{< affiliate >}}
+<a href='https://mttag.com/s/lVM3LgiRzrQ' rel='nofollow'><img src='https://mttag.com/banner/lVM3LgiRzrQ' alt='' style='max-width:100%;height:auto;' border='0' /></a>
+{{< /affiliate >}}\n\n`;
+    }
+  }
+
+  md += `{{< ad-top >}}\n\n`;
+  md += body + '\n\n';
+
+  if (adBottom) {
+    md += `{{< ad-bottom >}}\n`;
+  }
+
+  return md;
+}
+
+function generatePreview() {
+  const md = generateMarkdown();
+  log('プレビュー生成完了', 'info');
+  // 簡易プレビュー表示
+  const logEl = document.getElementById('log');
+  logEl.innerHTML += `<span class="info">--- Markdown ---</span>\n`;
+  logEl.innerText += md + '\n';
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+async function createArticle() {
+  const slug = document.getElementById('slug').value;
+  const title = document.getElementById('title').value;
+  if (!slug) { log('スラッグを入力してください', 'error'); return; }
+  if (!title) { log('タイトルを入力してください', 'error'); return; }
+
+  const md = generateMarkdown();
+
+  try {
+    const res = await fetch(API + '/create-article', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slug, content: md })
+    });
+    const data = await res.json();
+    if (data.success) {
+      log(`記事作成: ${data.path}`, 'success');
+    } else {
+      log(`エラー: ${data.error}`, 'error');
+    }
+  } catch(e) {
+    log('サーバーに接続できません。server.js を起動してください。', 'error');
+  }
+}
+
+async function deployAll() {
+  log('デプロイ開始...', 'info');
+  try {
+    const res = await fetch(API + '/deploy', { method: 'POST' });
+    const data = await res.json();
+    if (data.success) {
+      log('デプロイ完了！ GitHub Actionsでビルド中...', 'success');
+      if (data.output) log(data.output, 'info');
+    } else {
+      log(`デプロイ失敗: ${data.error}`, 'error');
+    }
+  } catch(e) {
+    log('サーバーに接続できません', 'error');
+  }
+}
+
+async function checkDeploy() {
+  try {
+    const res = await fetch(API + '/deploy-status');
+    const data = await res.json();
+    log(`最新デプロイ: ${data.status}`, data.status === 'completed' ? 'success' : 'info');
+  } catch(e) {
+    log('ステータス確認失敗', 'error');
+  }
+}
+
+function openSite() { window.open('https://buzztter-news.github.io/', '_blank'); }
+function openGitHub() { window.open('https://github.com/buzztter-news/buzztter-news.github.io', '_blank'); }
+
+function setTemplate(type) {
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  event.target.classList.add('active');
+
+  const bodyEl = document.getElementById('body');
+  const templates = {
+    news: `## 何が起きたのか\n\n\n\n## 経緯\n\n\n\n## ネット上の反応\n\n> 「」\n\n> 「」\n\n> 「」\n\n## まとめ\n\n`,
+    controversy: `## 何が起きたのか\n\n\n\n## 批判的な意見\n\n> 「」\n\n> 「」\n\n## 擁護する意見\n\n> 「」\n\n> 「」\n\n## まとめ\n\n`,
+    howto: `## 何が起きているのか\n\n\n\n## 原因\n\n\n\n## 対処法\n\n### 1. \n\n### 2. \n\n### 3. \n\n## まとめ\n\n`
+  };
+  bodyEl.value = templates[type] || '';
+}
+
+// 自動スラッグ生成
+document.getElementById('title').addEventListener('input', function() {
+  // タイトルからスラッグを生成しない（日本語なので手動入力）
+});
+
+checkServer();
+setInterval(checkServer, 10000);
+</script>
+</body>
+</html>
