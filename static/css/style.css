@@ -351,6 +351,21 @@ img { max-width: 100%; height: auto; }
   .ad-mobile-only { display: block; }
 }
 
+/* === 関連記事導線 === */
+.pickup-link {
+  display: block;
+  margin: 24px 0;
+  padding: 14px 16px;
+  background: #f8f8f8;
+  border-left: 3px solid #e53935;
+  text-decoration: none;
+  color: #222;
+  transition: background 0.2s;
+}
+.pickup-link:hover { background: #f0f0f0; opacity: 1; }
+.pickup-link-label { display: block; font-size: 10px; color: #e53935; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 4px; }
+.pickup-link-title { font-size: 0.9rem; font-weight: 700; line-height: 1.5; }
+
 /* 印刷対応 */
 @media print {
   .site-header, .site-footer, .sidebar, .ad-slot, .affiliate-banner,
