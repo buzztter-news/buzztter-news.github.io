@@ -8,7 +8,6 @@ tags: ["マンジャロ", "ダイエット", "GLP-1", "オンライン診療", "
 image: ""
 ---
 
-{{< ad-top >}}
 
 「食事制限が続かない」「運動する時間がない」——そんな悩みを抱える人の間で、いま**マンジャロ（チルゼパチド）**を使ったメディカルダイエットが急速に広がっています。
 
@@ -126,5 +125,3 @@ image: ""
 <span class="pickup-link-label">PICK UP</span>
 <span class="pickup-link-title">手持ちの顔写真がAVに！？話題のFACESWITCHを徹底解説</span>
 </a>
-
-{{< ad-bottom >}}

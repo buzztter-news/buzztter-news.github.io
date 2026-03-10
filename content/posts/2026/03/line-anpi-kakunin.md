@@ -8,7 +8,6 @@ tags: ["LINE", "安否確認", "災害", "地震", "防災"]
 image: ""
 ---
 
-{{< ad-top >}}
 
 2026年3月10日、LINEに突然「安否確認」が表示され、「地震あった？」「何が起きたの？」と困惑するユーザーが続出しています。
 
@@ -110,5 +109,3 @@ LINEは防災啓発の一環として、東日本大震災に関連する3月の
 <span class="pickup-link-label">PICK UP</span>
 <span class="pickup-link-title">手持ちの顔写真がAVに！？話題のFACESWITCHを徹底解説</span>
 </a>
-
-{{< ad-bottom >}}
