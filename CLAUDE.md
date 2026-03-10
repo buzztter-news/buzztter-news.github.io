@@ -87,6 +87,14 @@ image: "https://images.unsplash.com/photo-XXXXX?w=1200&h=630&fit=crop"
 | QuickS | ad-sidebar（PC右側固定） | `https://quick-s.jp/?afid=ma7pyy&merchant_name=Quicks&token=ff0RZDk&visitor_id=69aecab92c6c7f551b306fcb` |
 | mttag新規 | ad-sidebar（PC右側固定） | `https://mttag.com/s/IwnrBJS4f5E` |
 
+### スマホ限定インタースティシャル広告
+- `ad-interstitial-mobile.html` で自動表示（single.htmlに組み込み済み）
+- **スマホ（768px以下）のみ**表示、PCでは非表示
+- **50%の確率**でランダム表示（毎回ではない）
+- ページ表示から**8秒後**に下からスライドイン
+- **除外記事**: エポスカード記事（`university-student-first-credit-card`）、FACESWITCH記事（`faceswitch-ai-review`）
+- A8.net フレッツ光バナー（728x90）
+
 ### 広告配置ルール
 - **FaceSwitch（必須）**: 全記事に最低2箇所、最大3箇所。ad-bottom + 記事内affiliate。エロ・恋愛・ゴシップ系は+1箇所追加
 - **導線リンク（PICKUP）**: 全記事に設置

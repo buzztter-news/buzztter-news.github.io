@@ -161,11 +161,20 @@ img { max-width: 100%; height: auto; }
   justify-content: space-between;
   height: 56px;
 }
-.site-logo { display: flex; align-items: center; gap: 8px; }
-.site-logo:hover { text-decoration: none; opacity: 1; }
-.logo-icon { flex-shrink: 0; }
-.logo-text { font-size: 1.25rem; color: #000; font-weight: 900; letter-spacing: -0.5px; }
-.logo-accent { color: #e53935; }
+.site-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.site-logo:hover { text-decoration: none; opacity: 0.85; }
+.logo-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 8px;
+  background: #e53935; color: #fff;
+  font-size: 20px; font-weight: 900; letter-spacing: 0;
+  flex-shrink: 0;
+}
+.logo-text {
+  font-size: 1.3rem; color: #111; font-weight: 900;
+  letter-spacing: 2px; font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.logo-accent { color: #e53935; margin-left: 1px; }
 .main-nav .nav-menu {
   list-style: none;
   display: flex;
