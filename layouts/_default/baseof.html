@@ -7,6 +7,7 @@
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "feed.xml" | absURL }}">
+  <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | absURL }}">
   <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
   <meta name="google-site-verification" content="y4gzuXNXeaB8BxX5ntgMsQpQ4zPP71oKtuBhpuaxZnI" />
   {{ template "_internal/google_analytics.html" . }}

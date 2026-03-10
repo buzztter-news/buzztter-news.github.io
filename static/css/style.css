@@ -375,7 +375,7 @@ img { max-width: 100%; height: auto; }
 /* === Affiliate Banner === */
 .affiliate-banner { margin: 24px 0; text-align: center; }
 .affiliate-banner .ad-label { display: block; font-size: 10px; color: #999; letter-spacing: 0.05em; margin-bottom: 4px; text-align: center; }
-.affiliate-banner img { max-width: 480px; width: 100%; height: auto; }
+.affiliate-banner img { display: none; }
 .affiliate-banner a { display: inline-block; }
 
 /* === Footer === */
