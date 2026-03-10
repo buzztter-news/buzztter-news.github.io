@@ -97,8 +97,13 @@ image: "https://images.unsplash.com/photo-XXXXX?w=1200&h=630&fit=crop"
 | **人気記事下FaceSwitch** | `sidebar.html` | 人気記事セクションの下 | FaceSwitch バナー風CTA |
 | **スマホインタースティシャル** | `ad-interstitial-mobile.html` | スマホ限定、50%ランダム、8秒後表示 | A8バナー2種ランダム出し分け（728x90 / 468x60） |
 
+### モーダル広告の出し分けルール
+- `modal_ad: "faceswitch"` → FaceSwitchバナー（保存ランキング・FaceSwitch・5ch記事に設定）
+- 未指定（デフォルト） → ポイ活A8バナー（それ以外の全記事）
+- `clean_ads: true` → モーダル広告自体を非表示（エポスカード記事等）
+
 ### 除外ルール
-- `clean_ads: true` → モーダル広告・スマートバナーを非表示
+- `clean_ads: true` → モーダル広告・スマートバナー・サイドバー広告を非表示
 - `no_ad_bottom: true` → ad-bottomを非表示
 - スマホインタースティシャルは `university-student-first-credit-card` と `faceswitch-ai-review` を除外
 
