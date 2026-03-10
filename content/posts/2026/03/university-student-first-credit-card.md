@@ -8,6 +8,7 @@ tags: ["クレジットカード", "大学生", "新生活", "年会費無料", 
 image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop"
 no_ad_bottom: true
 clean_ads: true
+sticky_ad: true
 ---
 
 春から大学生になる方の中には、「そろそろクレジットカードを作りたい」と考えている方も多いのではないでしょうか。教科書の購入やサブスク、ネットショッピングなど、大学生活ではカード決済の場面が一気に増えます。

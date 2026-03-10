@@ -1,0 +1,65 @@
+{{ if .Params.sticky_ad }}
+<div class="sticky-bottom-ad" id="stickyBottomAd">
+  <button class="sticky-close" id="stickyClose" aria-label="閉じる">&times;</button>
+  <div class="sticky-ad-inner">
+    <script type='text/javascript' src='https://ad-verification.a8.net/ad/js/brandsafe.js'></script>
+    <div id='div_admane_async_1734_658_2973'>
+    <script type='text/javascript'>
+    <!--
+    brandsafe_js_async('//ad-verification.a8.net/ad', '_site=1734&_article=658&_link=2973&_image=3221&_ns=1&sad=s00000015110002', '260310968102', '4AZD88+1OQ8HE+38L8+BY641');
+    //-->
+    </script>
+    </div>
+    <img border="0" width="1" height="1" src="https://www18.a8.net/0.gif?a8mat=4AZD88+1OQ8HE+38L8+BY641" alt="">
+  </div>
+</div>
+<style>
+.sticky-bottom-ad {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9000;
+  background: #fff;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+  padding: 6px 0;
+  text-align: center;
+}
+.sticky-ad-inner {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+}
+.sticky-ad-inner img,
+.sticky-ad-inner iframe {
+  max-width: 100%;
+  height: auto;
+}
+.sticky-close {
+  position: absolute;
+  top: -18px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.35);
+  color: #fff;
+  border: none;
+  font-size: 10px;
+  line-height: 18px;
+  text-align: center;
+  cursor: pointer;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.sticky-bottom-ad.hidden { display: none; }
+</style>
+<script>
+document.getElementById('stickyClose').addEventListener('click', function() {
+  document.getElementById('stickyBottomAd').classList.add('hidden');
+  setTimeout(function() {
+    document.getElementById('stickyBottomAd').classList.remove('hidden');
+  }, 30000);
+});
+</script>
+{{ end }}
