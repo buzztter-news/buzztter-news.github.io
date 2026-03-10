@@ -1,3 +1,19 @@
+/* === Ad Duo (横並び2バナー) === */
+.ad-duo {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+.ad-duo img { max-width: 280px; height: auto; }
+.ad-duo iframe { max-width: 300px; }
+@media (max-width: 640px) {
+  .ad-duo { flex-direction: column; align-items: center; }
+  .ad-duo img { max-width: 100%; }
+}
+
 /* === FaceSwitch Banner Link === */
 .fs-banner-link {
   display: block;

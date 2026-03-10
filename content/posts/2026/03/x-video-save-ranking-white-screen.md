@@ -91,7 +91,12 @@ Googleアプリ内のブラウザ（WebView）は、SafariやChromeとは**Cooki
 
 同じ症状で困っている方は、ぜひこの方法を試してみてください。
 
-{{< affiliate >}}
+{{< rawhtml >}}
+<div class="ad-duo">
+  <a href='https://mttag.com/s/i946xt1euvg' rel='nofollow' target='_blank'><img src='https://mttag.com/banner/i946xt1euvg' alt='FACESWITCH' width='360' height='360' border='0'></a>
+  <iframe id="onlineBanner" frameborder="0" scrolling="no" width="300" height="250" src="https://livechat.dmm.co.jp/publicads?&size=S&design=A&affiliate_id=hamburger-004"></iframe>
+</div>
+{{< /rawhtml >}}
 
 <a class="pickup-link" href="/posts/2026/03/faceswitch-ai-review/">
 <span class="pickup-link-label">PICK UP</span>
