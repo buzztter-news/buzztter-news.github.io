@@ -16,9 +16,9 @@ Hugo静的サイト。GitHub Pagesでホスティング。
 
 1. **URLからネタ取得** — WebFetch/WebSearchでページ内容・関連情報を収集
 2. **ジャンル判定** — 内容からカテゴリを自動判定
-3. **広告セット選択** — ジャンルに応じて配置を決定
-   - エロ・恋愛・芸能人ゴシップ系 → FaceSwitchバナーを多め（affiliate×2、導線リンクあり）
-   - 一般ニュース・IT系 → FaceSwitchは控えめ（ad-middle/bottomのみ）
+3. **広告セット選択** — ジャンルに応じて配置を決定。**FaceSwitchは全記事に必ず最低2箇所、最大3箇所配置する（必須）**
+   - エロ・恋愛・芸能人ゴシップ系 → FaceSwitch×3（ad-middle + ad-bottom + affiliate1箇所）+ 導線リンク
+   - 一般ニュース・IT系 → FaceSwitch×2（ad-middle + ad-bottom）+ 導線リンク
 4. **記事生成** — 下記テンプレートに従い記事作成、広告挿入
 5. **ビルド確認** — `hugo` でエラーなしを確認
 6. **デプロイ** — `./scripts/deploy.sh` で公開
