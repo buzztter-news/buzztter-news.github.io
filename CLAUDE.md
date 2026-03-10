@@ -46,6 +46,33 @@ image: ""
 - 本文中間（H2が3つ目の前あたり）: `{{</* ad-middle */>}}`
 - まとめの後: `{{</* ad-bottom */>}}`
 
+## 広告バナー管理（2026-03現在）
+
+### 登録バナー一覧
+| 名前 | 配置 | リンク |
+|------|------|--------|
+| freecash | ad-top（全ページ上部固定） | `https://freecash.com/r/2ENQLF` |
+| FaceSwitch | ad-middle, ad-bottom, 記事内affiliate（全ページに散りばめる） | `https://www.face-switch-ai.com/?afid=ma7pyy&merchant_name=nanyotera&token=mp4coWY&visitor_id=69adb74dfac345275e282e06` |
+| QuickS | ad-sidebar（PC右側固定） | `https://quick-s.jp/?afid=ma7pyy&merchant_name=Quicks&token=ff0RZDk&visitor_id=69aecab92c6c7f551b306fcb` |
+| mttag新規 | ad-sidebar（PC右側固定） | `https://mttag.com/s/IwnrBJS4f5E` |
+
+### 記事内affiliateショートコードの使い方
+エロ・恋愛系の話題、または感情が動くポイントの直後にFaceSwitchバナーを挿入:
+```
+{{</* affiliate */>}}
+<a href='FaceSwitchリンク' rel='nofollow' target='_blank'><img src='https://mttag.com/banner/lVM3LgiRzrQ' alt='FaceSwitch' style='max-width:100%;height:auto;' border='0' /></a>
+{{</* /affiliate */>}}
+```
+
+### FACESWITCH記事への導線リンク
+各記事のまとめ後・ad-bottom前に設置:
+```html
+<a class="pickup-link" href="/posts/2026/03/faceswitch-ai-review/">
+<span class="pickup-link-label">PICK UP</span>
+<span class="pickup-link-title">手持ちの顔写真がAVに！？話題のFACESWITCHを徹底解説</span>
+</a>
+```
+
 ## トーンと文体
 - ニュースメディア調（「〜とのことです」「〜が話題となっています」）
 - 中立的な立場を保つ（個人の意見は「〜という声も」で紹介）
@@ -58,5 +85,13 @@ image: ""
 
 ## デプロイ手順
 1. 記事作成後 `hugo server -D` でプレビュー確認
+
+
+
+
+
+
+
+
 2. draft を false に変更
 3. `./scripts/deploy.sh` でデプロイ

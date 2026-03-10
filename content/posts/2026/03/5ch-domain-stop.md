@@ -25,7 +25,7 @@ image: ""
 {{< tweet user="tkzwgrs" id="2029836164476387367" >}}
 
 {{< affiliate >}}
-<a href='https://mttag.com/s/lVM3LgiRzrQ' rel='nofollow'><img src='https://mttag.com/banner/lVM3LgiRzrQ' alt='' style='max-width:100%;height:auto;' border='0' /></a>
+<a href='https://www.face-switch-ai.com/?afid=ma7pyy&merchant_name=nanyotera&token=mp4coWY&visitor_id=69adb74dfac345275e282e06' rel='nofollow' target='_blank'><img src='https://mttag.com/banner/lVM3LgiRzrQ' alt='FaceSwitch' style='max-width:100%;height:auto;' border='0' /></a>
 {{< /affiliate >}}
 
 これを受けて、ワトキンス氏は代替ドメイン**「5ch.io」への移行**をユーザーに呼びかけています。
