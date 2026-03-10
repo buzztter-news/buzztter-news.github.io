@@ -14,7 +14,7 @@
   {{ block "head" . }}{{ end }}
 </head>
 <body>
-  {{ partial "smart-banner.html" . }}
+  {{ if not .Params.clean_ads }}{{ partial "smart-banner.html" . }}{{ end }}
   {{ partial "header.html" . }}
   <main class="container">
     {{ block "main" . }}{{ end }}
