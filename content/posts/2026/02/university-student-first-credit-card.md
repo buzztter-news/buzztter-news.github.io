@@ -75,6 +75,4 @@ brandsafe_js_async('//ad-verification.a8.net/ad', '_site=1734&_article=658&_link
 <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4AZD88+1OQ8HE+38L8+BXQOH" alt="">
 {{< /affiliate >}}
 
-## まとめ
-
-大学生の最初のクレカは、**年会費無料・ポイント高還元・保険付き**が揃ったエポスカードが最適解。18歳になっていれば今すぐ申し込めるので、新生活が始まる前に準備しておきましょう。
+年会費無料・保険付き・ポイントも貯まる。18歳になっていれば今すぐ申し込めるので、新生活が始まる前に準備しておきましょう。
