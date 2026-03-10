@@ -99,6 +99,10 @@ LINEは防災啓発の一環として、東日本大震災に関連する3月の
 - タップしなければ相手への通知はないので安心
 
 {{< affiliate >}}
+<a href="https://t.afi-b.com/visit.php?a=R160568-c518449J&p=e970957w" rel="nofollow"><img src="https://www.afi-b.com/upload_image/16056-1749401126-3.png" width="250" height="250" style="border:none;" alt="コールドクター" /></a><img src="https://t.afi-b.com/lead/R160568/e970957w/c518449J" width="1" height="1" style="border:none;" />
+{{< /affiliate >}}
+
+{{< affiliate >}}
 <a href='https://mttag.com/s/i946xt1euvg' rel='nofollow'><strong>無料で顔写真からAVを作ってみる</strong></a><img src='https://mttag.com/banner/i946xt1euvg' width='1' height='1' border='0' />
 {{< /affiliate >}}
 

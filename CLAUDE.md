@@ -72,15 +72,27 @@ image: ""
 ### 登録バナー一覧
 | 名前 | 配置 | リンク |
 |------|------|--------|
-| freecash | ad-top（全ページ上部固定） | `https://freecash.com/r/2ENQLF` |
-| FaceSwitch | ad-middle, ad-bottom, 記事内affiliate（全ページに散りばめる） | `https://www.face-switch-ai.com/?afid=ma7pyy&merchant_name=nanyotera&token=mp4coWY&visitor_id=69adb74dfac345275e282e06` |
+| freecash | ad-top（モバイルのみ） | `https://freecash.com/r/2ENQLF` |
+| FaceSwitch | ad-bottom, 記事内affiliate（全ページに散りばめる） | mttag: `i946xt1euvg` |
+| コールドクター(マンジャロ) | 記事内affiliate（生活・美容・健康・主婦向け記事） | afi-b: `R160568-c518449J` / 250x250バナー |
 | QuickS | ad-sidebar（PC右側固定） | `https://quick-s.jp/?afid=ma7pyy&merchant_name=Quicks&token=ff0RZDk&visitor_id=69aecab92c6c7f551b306fcb` |
 | mttag新規 | ad-sidebar（PC右側固定） | `https://mttag.com/s/IwnrBJS4f5E` |
 
-### FaceSwitch配置ルール（必須）
-- **全記事に最低2箇所**: ad-middle + ad-bottom（テンプレートpartialで自動挿入）
-- **エロ・恋愛・ゴシップ系は3箇所**: 上記 + 記事内affiliateショートコード1箇所（ツイート直下 or 感情が動くポイントの直後）
-- 導線リンク（PICKUP）も全記事に設置
+### 広告配置ルール
+- **FaceSwitch（必須）**: 全記事に最低2箇所、最大3箇所。ad-bottom + 記事内affiliate。エロ・恋愛・ゴシップ系は+1箇所追加
+- **コールドクター/マンジャロ**: 生活・美容・健康・主婦向け記事に配置。FaceSwitchと併用OK
+- **導線リンク（PICKUP）**: 全記事に設置
+- **ジャンル別の使い分け**:
+  - エロ・恋愛・ゴシップ系 → FaceSwitch多め
+  - 生活・健康・主婦向け → コールドクター + FaceSwitch
+  - IT・ニュース系 → FaceSwitchのみ
+
+### コールドクター(マンジャロ)の貼り方
+```
+{{</* affiliate */>}}
+<a href="https://t.afi-b.com/visit.php?a=R160568-c518449J&p=e970957w" rel="nofollow"><img src="https://www.afi-b.com/upload_image/16056-1749401126-3.png" width="250" height="250" style="border:none;" alt="コールドクター" /></a><img src="https://t.afi-b.com/lead/R160568/e970957w/c518449J" width="1" height="1" style="border:none;" />
+{{</* /affiliate */>}}
+```
 
 ### 記事内affiliateショートコードの使い方
 エロ・恋愛系の話題、または感情が動くポイントの直後にFaceSwitchを挿入:
