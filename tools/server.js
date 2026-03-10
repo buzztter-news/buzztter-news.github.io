@@ -1,18 +1,19 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const { execSync } = require('child_process');
+const { execSync, exec } = require('child_process');
 
 const PORT = 3456;
 const ROOT = path.join(__dirname, '..');
+const DATA_FILE = path.join(__dirname, 'data.json');
 
-// 広告一覧（ここで管理）
-const ADS = {
-  'lVM3LgiRzrQ': { name: 'ベストお薬', type: 'banner' },
-  'i946xt1euvg': { name: 'FaceSwitch', type: 'banner' },
-  'PACa2QJNwqs': { name: 'サイドバー広告1', type: 'banner' },
-  'txCaj_1DrSI': { name: 'サイドバー広告2', type: 'banner' },
-};
+function loadData() {
+  return JSON.parse(fs.readFileSync(DATA_FILE, 'utf-8'));
+}
+
+function saveData(data) {
+  fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2), 'utf-8');
+}
 
 function parseBody(req) {
   return new Promise((resolve) => {
@@ -28,18 +29,17 @@ function respond(res, data, status = 200) {
   res.writeHead(status, {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
   });
   res.end(JSON.stringify(data));
 }
 
 const server = http.createServer(async (req, res) => {
-  // CORS preflight
   if (req.method === 'OPTIONS') {
     res.writeHead(204, {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
     });
     return res.end();
@@ -54,18 +54,105 @@ const server = http.createServer(async (req, res) => {
 
   // API: ステータス
   if (req.url === '/status') {
-    return respond(res, { ok: true, ads: ADS });
+    return respond(res, { ok: true });
   }
 
-  // API: 広告一覧
-  if (req.url === '/ads') {
-    return respond(res, { ads: ADS });
+  // API: データ取得
+  if (req.url === '/data' && req.method === 'GET') {
+    return respond(res, loadData());
   }
 
-  // API: 記事作成
+  // API: 広告追加
+  if (req.url === '/ads' && req.method === 'POST') {
+    const data = loadData();
+    const ad = await parseBody(req);
+    ad.id = ad.id || Date.now().toString();
+    ad.active = true;
+    data.ads.push(ad);
+    saveData(data);
+    return respond(res, { success: true, ads: data.ads });
+  }
+
+  // API: 広告削除
+  if (req.url.startsWith('/ads/') && req.method === 'DELETE') {
+    const id = req.url.split('/ads/')[1];
+    const data = loadData();
+    data.ads = data.ads.filter(a => a.id !== id);
+    saveData(data);
+    return respond(res, { success: true, ads: data.ads });
+  }
+
+  // API: 広告更新
+  if (req.url.startsWith('/ads/') && req.method === 'PUT') {
+    const id = req.url.split('/ads/')[1];
+    const updates = await parseBody(req);
+    const data = loadData();
+    const idx = data.ads.findIndex(a => a.id === id);
+    if (idx >= 0) {
+      data.ads[idx] = { ...data.ads[idx], ...updates };
+      saveData(data);
+    }
+    return respond(res, { success: true, ads: data.ads });
+  }
+
+  // API: バズリンク追加
+  if (req.url === '/buzz' && req.method === 'POST') {
+    const data = loadData();
+    const buzz = await parseBody(req);
+    buzz.id = Date.now().toString();
+    buzz.addedAt = new Date().toISOString();
+    data.buzzLinks.push(buzz);
+    saveData(data);
+    return respond(res, { success: true, buzzLinks: data.buzzLinks });
+  }
+
+  // API: バズリンク削除
+  if (req.url.startsWith('/buzz/') && req.method === 'DELETE') {
+    const id = req.url.split('/buzz/')[1];
+    const data = loadData();
+    data.buzzLinks = data.buzzLinks.filter(b => b.id !== id);
+    saveData(data);
+    return respond(res, { success: true, buzzLinks: data.buzzLinks });
+  }
+
+  // API: PICKUP更新
+  if (req.url === '/pickup' && req.method === 'PUT') {
+    const data = loadData();
+    const pickup = await parseBody(req);
+    data.pickupLink = pickup;
+    saveData(data);
+    return respond(res, { success: true });
+  }
+
+  // API: Claude記事生成
+  if (req.url === '/generate' && req.method === 'POST') {
+    const { url, keywords } = await parseBody(req);
+    if (!url) return respond(res, { error: 'URLが必要です' }, 400);
+
+    const prompt = keywords
+      ? `${url} この内容で記事を書いて。タイトルに「${keywords}」を入れて。デプロイまで全自動で。`
+      : `${url} この内容で記事を書いて。デプロイまで全自動で。`;
+
+    try {
+      exec(`cd "${ROOT}" && claude -p "${prompt.replace(/"/g, '\\"')}"`, {
+        timeout: 120000,
+        maxBuffer: 10 * 1024 * 1024,
+      }, (err, stdout, stderr) => {
+        if (err) {
+          return respond(res, { success: false, error: stderr || err.message });
+        }
+        return respond(res, { success: true, output: stdout });
+      });
+    } catch (e) {
+      return respond(res, { success: false, error: e.message });
+    }
+    return; // async response
+  }
+
+  // API: 記事作成（手動）
   if (req.url === '/create-article' && req.method === 'POST') {
-    const data = await parseBody(req);
-    const { slug, content } = data;
+    const body = await parseBody(req);
+    const { slug, content } = body;
     if (!slug || !content) return respond(res, { error: 'slug と content が必要' }, 400);
 
     const now = new Date();
@@ -74,22 +161,20 @@ const server = http.createServer(async (req, res) => {
     const dir = path.join(ROOT, 'content', 'posts', String(year), month);
     const filePath = path.join(dir, `${slug}.md`);
 
-    if (fs.existsSync(filePath)) return respond(res, { error: 'ファイルが既に存在します' }, 400);
+    if (fs.existsSync(filePath)) return respond(res, { error: 'ファイルが既に存在' }, 400);
 
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(filePath, content, 'utf-8');
-
-    const relPath = path.relative(ROOT, filePath);
-    return respond(res, { success: true, path: relPath });
+    return respond(res, { success: true, path: path.relative(ROOT, filePath) });
   }
 
   // API: デプロイ
   if (req.url === '/deploy' && req.method === 'POST') {
     try {
-      const output = execSync('git add . && git commit -m "記事更新: $(date +\'%Y-%m-%d %H:%M\')" && git push', {
+      const output = execSync('./scripts/deploy.sh', {
         cwd: ROOT,
         encoding: 'utf-8',
-        timeout: 30000,
+        timeout: 60000,
       });
       return respond(res, { success: true, output });
     } catch (e) {
@@ -112,6 +197,29 @@ const server = http.createServer(async (req, res) => {
       return respond(res, { status: 'unknown' });
     } catch (e) {
       return respond(res, { status: 'error', error: e.message });
+    }
+  }
+
+  // API: 記事一覧
+  if (req.url === '/articles') {
+    try {
+      const output = execSync('find content/posts -name "*.md" -not -name "_index.md" | sort -r | head -20', {
+        cwd: ROOT,
+        encoding: 'utf-8',
+      });
+      const articles = output.trim().split('\n').filter(Boolean).map(f => {
+        const content = fs.readFileSync(path.join(ROOT, f), 'utf-8');
+        const titleMatch = content.match(/title:\s*"(.+?)"/);
+        const dateMatch = content.match(/date:\s*(.+)/);
+        return {
+          path: f,
+          title: titleMatch ? titleMatch[1] : f,
+          date: dateMatch ? dateMatch[1].trim() : '',
+        };
+      });
+      return respond(res, { articles });
+    } catch (e) {
+      return respond(res, { articles: [] });
     }
   }
 

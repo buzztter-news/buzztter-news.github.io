@@ -1,0 +1,41 @@
+{
+  "ads": [
+    {
+      "id": "freecash",
+      "name": "freecash",
+      "placement": "ad-top（モバイルのみ）",
+      "link": "https://freecash.com/r/2ENQLF",
+      "bannerImg": "https://mttag.com/banner/i946xt1euvg",
+      "active": true
+    },
+    {
+      "id": "faceswitch",
+      "name": "FaceSwitch",
+      "placement": "ad-middle, ad-bottom, 記事内affiliate",
+      "link": "https://www.face-switch-ai.com/?afid=ma7pyy&merchant_name=nanyotera&token=mp4coWY&visitor_id=69adb74dfac345275e282e06",
+      "bannerImg": "https://mttag.com/banner/lVM3LgiRzrQ",
+      "active": true
+    },
+    {
+      "id": "quicks",
+      "name": "QuickS",
+      "placement": "ad-sidebar（PC右側）",
+      "link": "https://quick-s.jp/?afid=ma7pyy&merchant_name=Quicks&token=ff0RZDk&visitor_id=69aecab92c6c7f551b306fcb",
+      "bannerImg": "",
+      "active": true
+    },
+    {
+      "id": "mttag-new",
+      "name": "mttag新規",
+      "placement": "ad-sidebar（PC右側）",
+      "link": "https://mttag.com/s/IwnrBJS4f5E",
+      "bannerImg": "https://mttag.com/banner/IwnrBJS4f5E",
+      "active": true
+    }
+  ],
+  "buzzLinks": [],
+  "pickupLink": {
+    "url": "/posts/2026/03/faceswitch-ai-review/",
+    "title": "手持ちの顔写真がAVに！？話題のFACESWITCHを徹底解説"
+  }
+}
