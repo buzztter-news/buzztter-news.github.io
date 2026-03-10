@@ -343,7 +343,7 @@ img { max-width: 100%; height: auto; }
 .ad-title-top img { max-width: 100%; height: auto; }
 .ad-slot img { max-width: 100%; height: auto; }
 .ad-label { display: block; font-size: 10px; color: #999; letter-spacing: 0.05em; margin-bottom: 4px; }
-.ad-middle img, .ad-bottom img { max-width: 480px; }
+.ad-middle img, .ad-bottom img { display: none; }
 .ad-middle-link {
   display: block;
   background: #f8f8f8;
