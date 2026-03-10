@@ -1,0 +1,9 @@
+{{ $lead := .Get "lead" }}
+{{ $url := .Get "url" }}
+{{ $button := .Get "button" }}
+{{ $note := .Get "note" }}
+<div class="cta-box">
+  <p class="cta-lead">{{ $lead }}</p>
+  <a href="{{ $url }}" rel="nofollow" class="cta-button">{{ $button }} &raquo;</a>
+  {{ if $note }}<p class="cta-note">{{ $note }}</p>{{ end }}
+</div>
