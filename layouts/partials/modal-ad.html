@@ -19,11 +19,11 @@
   .modal-ad img { max-width: 280px; width: 100%; height: auto; }
   .modal-close {
     position: absolute;
-    top: -8px; right: -8px;
-    width: 22px; height: 22px;
+    top: -14px; right: -14px;
+    width: 32px; height: 32px;
     border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.5);
+    border: none;
     cursor: pointer;
     z-index: 10;
     display: none;
@@ -31,14 +31,14 @@
     justify-content: center;
     -webkit-tap-highlight-color: transparent;
     opacity: 0;
-    transition: opacity 0.5s;
+    transition: opacity 0.3s;
   }
   .modal-close.show {
     display: flex;
-    opacity: 0.4;
+    opacity: 0.7;
   }
-  .modal-close:hover { opacity: 0.8; }
-  .modal-close svg { width: 10px; height: 10px; }
+  .modal-close:hover { opacity: 1; }
+  .modal-close svg { width: 14px; height: 14px; }
   .modal-backdrop.modal-hidden,
   .modal-ad.modal-hidden { display: none; }
   @keyframes modalFadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -48,7 +48,7 @@
 <div class="modal-backdrop" id="modalBackdrop"></div>
 <div class="modal-ad" id="modalAd">
   <button class="modal-close" id="modalClose" onclick="closeModalAd()" aria-label="閉じる">
-    <svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round">
       <line x1="7" y1="7" x2="17" y2="17"/><line x1="17" y1="7" x2="7" y2="17"/>
     </svg>
   </button>
