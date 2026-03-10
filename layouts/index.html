@@ -1,0 +1,48 @@
+{{ define "main" }}
+<div class="page-layout">
+  <div class="content-area">
+    <h1 class="page-title">トレンドニュースまとめ</h1>
+    <div class="article-grid">
+      {{ $posts := where .Site.RegularPages "Section" "posts" }}
+      {{ $paginator := .Paginate $posts }}
+      {{ range $paginator.Pages }}
+      <article class="article-card">
+        <a href="{{ .Permalink }}">
+          {{ with .Params.image }}
+          <div class="card-image">
+            <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+          </div>
+          {{ else }}
+          <div class="card-image card-image-placeholder">
+            <span>📰</span>
+          </div>
+          {{ end }}
+          <div class="card-body">
+            <div class="card-meta">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+              {{ with .Params.categories }}
+              <span class="card-category">{{ index . 0 }}</span>
+              {{ end }}
+            </div>
+            <h2 class="card-title">{{ .Title }}</h2>
+          </div>
+        </a>
+      </article>
+      {{ end }}
+    </div>
+
+    {{ if gt $paginator.TotalPages 1 }}
+    <nav class="pagination">
+      {{ if $paginator.HasPrev }}
+      <a href="{{ $paginator.Prev.URL }}" class="page-link">&laquo; 前へ</a>
+      {{ end }}
+      <span class="page-info">{{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}</span>
+      {{ if $paginator.HasNext }}
+      <a href="{{ $paginator.Next.URL }}" class="page-link">次へ &raquo;</a>
+      {{ end }}
+    </nav>
+    {{ end }}
+  </div>
+  {{ partial "sidebar.html" . }}
+</div>
+{{ end }}
