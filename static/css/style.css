@@ -1,3 +1,24 @@
+/* === Mobile Only Ad === */
+.mobile-only-ad { display: none; }
+@media (max-width: 768px) {
+  .mobile-only-ad {
+    display: block;
+    text-align: center;
+    margin: 16px 0;
+  }
+  .mobile-only-ad a {
+    display: block;
+    background: linear-gradient(135deg, #e91e63, #ff5252);
+    color: #fff !important;
+    text-decoration: none !important;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 800;
+    box-shadow: 0 3px 12px rgba(233,30,99,0.3);
+  }
+}
+
 /* === Ad Duo (横並び2バナー) === */
 .ad-duo {
   display: flex;

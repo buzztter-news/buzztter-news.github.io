@@ -12,6 +12,10 @@ image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1200&h=63
 
 この記事では、原因と具体的な解決方法をわかりやすく解説します。
 
+<div class="mobile-only-ad">
+<a href="https://al.dmm.co.jp/?af_id=hamburger-004&ch=lc_banner&ch_id=design%3DA%26size%3DS&lurl=https%3A%2F%2Fwww.dmm.co.jp%2Flive%2Fchat%2F-%2Fchat-room%2F%3D%2Fcharacter_id%3D958554%2F" rel="nofollow" target="_blank"><strong>今すぐライブチャットを見る →</strong></a>
+</div>
+
 ## そもそも「動画保存ランキング」とは？
 
 X（旧Twitter）で話題になっている動画をランキング形式でまとめているサービスです。中でも有名なのが**「ツイビデオ（TwiVideo）」**というサイト。
