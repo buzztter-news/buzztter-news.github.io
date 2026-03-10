@@ -36,7 +36,7 @@
       {{ .Content }}
     </div>
 
-    {{ partial "ad-bottom.html" . }}
+    {{ if not .Params.no_ad_bottom }}{{ partial "ad-bottom.html" . }}{{ end }}
 
     <footer class="article-footer">
       {{ with .Params.tags }}
