@@ -9,6 +9,7 @@
 
 {{ define "main" }}
 {{ if not .Params.clean_ads }}{{ partial "modal-ad.html" . }}{{ end }}
+{{ partial "ad-interstitial-mobile.html" . }}
 <div class="page-layout">
   <article class="content-area article-single">
 

@@ -1,0 +1,49 @@
+{{/* スマホ限定・ランダム表示のインタースティシャル広告 */}}
+{{/* エポスカード記事とFACESWITCH記事は除外 */}}
+{{ $slug := .File.ContentBaseName }}
+{{ if and (ne $slug "university-student-first-credit-card") (ne $slug "faceswitch-ai-review") }}
+<div class="interstitial-mobile" id="interstitialMobile" style="display:none;">
+  <div class="interstitial-backdrop" onclick="closeInterstitial()"></div>
+  <div class="interstitial-content">
+    <button class="interstitial-close" onclick="closeInterstitial()" aria-label="閉じる">&times;</button>
+    <a href="https://px.a8.net/svt/ejp?a8mat=4AZE01+1B19KI+2PEO+C1DUP" rel="nofollow" target="_blank">
+      <img border="0" width="728" height="90" alt="" src="https://www25.a8.net/svt/bgt?aid=260311969079&wid=001&eno=01&mid=s00000012624002022000&mc=1" style="max-width:100%;height:auto;">
+    </a>
+    <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4AZE01+1B19KI+2PEO+C1DUP" alt="" style="display:none;">
+  </div>
+</div>
+<style>
+  .interstitial-mobile .interstitial-backdrop {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9990;
+  }
+  .interstitial-mobile .interstitial-content {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: #fff; z-index: 9991;
+    padding: 40px 16px 24px; text-align: center;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+    animation: interSlideUp 0.3s ease-out;
+  }
+  .interstitial-close {
+    position: absolute; top: 10px; right: 14px;
+    background: none; border: none; font-size: 28px; color: #999;
+    cursor: pointer; line-height: 1;
+  }
+  @keyframes interSlideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+  @media (min-width: 769px) { .interstitial-mobile { display: none !important; } }
+</style>
+<script>
+(function(){
+  if(window.innerWidth >= 769) return;
+  if(Math.random() > 0.5) return;
+  setTimeout(function(){
+    var el = document.getElementById('interstitialMobile');
+    if(el) el.style.display = 'block';
+  }, 8000);
+})();
+function closeInterstitial(){
+  var el = document.getElementById('interstitialMobile');
+  if(el) el.style.display = 'none';
+}
+</script>
+{{ end }}
