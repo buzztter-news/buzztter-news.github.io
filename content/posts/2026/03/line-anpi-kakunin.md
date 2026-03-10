@@ -97,9 +97,6 @@ LINEは防災啓発の一環として、東日本大震災に関連する3月の
 - 2024年能登半島地震では**1,200万人以上**が利用
 - タップしなければ相手への通知はないので安心
 
-{{< affiliate >}}
-<a href="https://t.afi-b.com/visit.php?a=R160568-k518453u&p=e970957w" rel="nofollow"><img src="https://www.afi-b.com/upload_image/16056-1752914626-3.png" width="468" height="60" style="border:none;" alt="コールドクター" /></a><img src="https://t.afi-b.com/lead/R160568/e970957w/k518453u" width="1" height="1" style="border:none;" />
-{{< /affiliate >}}
 
 {{< affiliate >}}
 <a href='https://mttag.com/s/i946xt1euvg' rel='nofollow'><strong>無料で顔写真からAVを作ってみる</strong></a><img src='https://mttag.com/banner/i946xt1euvg' width='1' height='1' border='0' />
