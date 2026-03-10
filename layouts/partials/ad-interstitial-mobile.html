@@ -6,10 +6,18 @@
   <div class="interstitial-backdrop" onclick="closeInterstitial()"></div>
   <div class="interstitial-content">
     <button class="interstitial-close" onclick="closeInterstitial()" aria-label="閉じる">&times;</button>
-    <a href="https://px.a8.net/svt/ejp?a8mat=4AZE01+1B19KI+2PEO+C1DUP" rel="nofollow" target="_blank">
-      <img border="0" width="728" height="90" alt="" src="https://www25.a8.net/svt/bgt?aid=260311969079&wid=001&eno=01&mid=s00000012624002022000&mc=1" style="max-width:100%;height:auto;">
-    </a>
-    <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4AZE01+1B19KI+2PEO+C1DUP" alt="" style="display:none;">
+    <div class="inter-ad" id="interAd1">
+      <a href="https://px.a8.net/svt/ejp?a8mat=4AZE01+1B19KI+2PEO+C1DUP" rel="nofollow" target="_blank">
+        <img border="0" width="728" height="90" alt="" src="https://www25.a8.net/svt/bgt?aid=260311969079&wid=001&eno=01&mid=s00000012624002022000&mc=1" style="max-width:100%;height:auto;">
+      </a>
+      <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4AZE01+1B19KI+2PEO+C1DUP" alt="" style="display:none;">
+    </div>
+    <div class="inter-ad" id="interAd2" style="display:none;">
+      <a href="https://px.a8.net/svt/ejp?a8mat=4AZE01+4P34KY+3NEK+BYT9D" rel="nofollow" target="_blank">
+        <img border="0" width="468" height="60" alt="" src="https://www21.a8.net/svt/bgt?aid=260311969284&wid=001&eno=01&mid=s00000017030002010000&mc=1" style="max-width:100%;height:auto;">
+      </a>
+      <img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4AZE01+4P34KY+3NEK+BYT9D" alt="" style="display:none;">
+    </div>
   </div>
 </div>
 <style>
@@ -36,6 +44,11 @@
 (function(){
   if(window.innerWidth >= 769) return;
   if(Math.random() > 0.5) return;
+  // ランダムでバナーを選択
+  if(Math.random() > 0.5){
+    var a1=document.getElementById('interAd1'); if(a1) a1.style.display='none';
+    var a2=document.getElementById('interAd2'); if(a2) a2.style.display='block';
+  }
   setTimeout(function(){
     var el = document.getElementById('interstitialMobile');
     if(el) el.style.display = 'block';
