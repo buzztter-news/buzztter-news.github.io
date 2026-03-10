@@ -87,12 +87,14 @@ image: "https://images.unsplash.com/photo-XXXXX?w=1200&h=630&fit=crop"
 | **モーダル広告** | `modal-ad.html` | 全記事（clean_ads除外）、ページ読み込み時 | A8 250x250バナー。×ボタン3秒遅延＋極小半透明 |
 | **スマートバナー** | `smart-banner.html` | 全ページ（clean_ads除外）、上部固定 | Freecashアプリ風バナー |
 | **ad-middle** | `ad-middle.html` | `{{</* ad-middle */>}}`挿入箇所 | FACESWITCH記事へのテキストリンク |
-| **ad-bottom** | `ad-bottom.html` | single.htmlテンプレート自動挿入 | FaceSwitch mttagテキストリンク |
-| **affiliate** | `affiliate.html` ショートコード | 記事内手動配置 | FaceSwitch mttagテキストリンク |
+| **ad-bottom** | `ad-bottom.html` | single.htmlテンプレート自動挿入 | FaceSwitch バナー風CTA |
+| **affiliate** | `affiliate.html` ショートコード | 記事内手動配置 | FaceSwitch バナー風CTA |
 | **サイドバー常設1** | `ad-sidebar.html` | PC右側固定 | mttag バナー（IwnrBJS4f5E） |
 | **サイドバー常設2** | `ad-sidebar.html` | PC右側固定 | A8 フレッツ光 600x500バナー |
-| **サイドバー常設3** | `ad-sidebar.html` | PC右側固定 | クイック現金サービス mttagテキストリンク |
+| **サイドバー常設3** | `ad-sidebar.html` | PC右側固定 | クイック現金サービス mttag |
+| **サイドバー常設4** | `ad-sidebar.html` | PC右側固定 | FaceSwitch バナー風CTA |
 | **サイドバー縦長ランダム** | `ad-sidebar.html` | PC右側、50%ランダム | A8 160x600縦長バナー |
+| **人気記事下FaceSwitch** | `sidebar.html` | 人気記事セクションの下 | FaceSwitch バナー風CTA |
 | **スマホインタースティシャル** | `ad-interstitial-mobile.html` | スマホ限定、50%ランダム、8秒後表示 | A8バナー2種ランダム出し分け（728x90 / 468x60） |
 
 ### 除外ルール
@@ -105,12 +107,17 @@ image: "https://images.unsplash.com/photo-XXXXX?w=1200&h=630&fit=crop"
 - **導線リンク（PICKUP）**: 全記事に設置
 
 ### 記事内affiliateショートコードの使い方
-エロ・恋愛系の話題、または感情が動くポイントの直後にFaceSwitchを挿入:
+感情が動くポイントの直後にFaceSwitchバナー風CTAを挿入:
 ```
 {{</* affiliate */>}}
-<a href='https://mttag.com/s/i946xt1euvg' rel='nofollow'><strong>無料で顔写真からAVを作ってみる</strong></a><img src='https://mttag.com/banner/i946xt1euvg' width='1' height='1' border='0' />
+<a href='https://mttag.com/s/i946xt1euvg' rel='nofollow' target='_blank' class='fs-banner-link'><span class='fs-banner'>顔写真1枚でAI動画生成<br><small>FACESWITCH 無料お試し →</small></span></a><img src='https://mttag.com/banner/i946xt1euvg' width='1' height='1' border='0' style='display:none;' />
 {{</* /affiliate */>}}
 ```
+
+### FaceSwitch広告の形式ルール
+- **テキストリンク禁止** — 「無料で顔写真からAVを作ってみる」等のプレーンテキストリンクは使わない
+- **バナー風CTA必須** — `.fs-banner-link` + `.fs-banner` クラスを使ったスタイル付きバナーで統一
+- mttagの1x1トラッキングピクセルは `style='display:none;'` で非表示にする（放置するとmttagが勝手にクリックできないバナー画像に差し替える）
 
 ### FACESWITCH記事への導線リンク
 各記事のまとめ後・ad-bottom前に設置:
