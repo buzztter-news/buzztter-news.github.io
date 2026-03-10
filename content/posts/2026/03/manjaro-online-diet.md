@@ -31,7 +31,7 @@ image: ""
 臨床試験では、マンジャロ5mgでオゼンピック最大容量1mgを上回る**平均-7.6kgの減量効果**が報告されています。
 
 {{< affiliate >}}
-<a href="https://t.afi-b.com/visit.php?a=R160568-c518449J&p=e970957w" rel="nofollow"><img src="https://www.afi-b.com/upload_image/16056-1749401126-3.png" width="250" height="250" style="border:none;" alt="コールドクター" /></a><img src="https://t.afi-b.com/lead/R160568/e970957w/c518449J" width="1" height="1" style="border:none;" />
+<a href="https://t.afi-b.com/visit.php?a=R160568-k518453u&p=e970957w" rel="nofollow"><img src="https://www.afi-b.com/upload_image/16056-1752914626-3.png" width="468" height="60" style="border:none;" alt="コールドクター" /></a><img src="https://t.afi-b.com/lead/R160568/e970957w/k518453u" width="1" height="1" style="border:none;" />
 {{< /affiliate >}}
 
 ## オンライン診療の流れ
@@ -115,7 +115,7 @@ image: ""
 - 必ず**医師の処方**を受けて安全に使うこと
 
 {{< affiliate >}}
-<a href="https://t.afi-b.com/visit.php?a=R160568-c518449J&p=e970957w" rel="nofollow"><img src="https://www.afi-b.com/upload_image/16056-1749401126-3.png" width="250" height="250" style="border:none;" alt="コールドクター" /></a><img src="https://t.afi-b.com/lead/R160568/e970957w/c518449J" width="1" height="1" style="border:none;" />
+<a href="https://t.afi-b.com/visit.php?a=R160568-k518453u&p=e970957w" rel="nofollow"><img src="https://www.afi-b.com/upload_image/16056-1752914626-3.png" width="468" height="60" style="border:none;" alt="コールドクター" /></a><img src="https://t.afi-b.com/lead/R160568/e970957w/k518453u" width="1" height="1" style="border:none;" />
 {{< /affiliate >}}
 
 {{< affiliate >}}

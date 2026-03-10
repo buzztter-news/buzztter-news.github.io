@@ -87,10 +87,12 @@ image: ""
   - 生活・健康・主婦向け → コールドクター + FaceSwitch
   - IT・ニュース系 → FaceSwitchのみ
 
-### コールドクター(マンジャロ)の貼り方
+### コールドクター(マンジャロ)の配置
+- **タイトル上**: single.htmlテンプレートで全記事に自動表示（468x60バナー）
+- **記事内affiliate**: 主婦・生活・健康系の記事に追加で配置
 ```
 {{</* affiliate */>}}
-<a href="https://t.afi-b.com/visit.php?a=R160568-c518449J&p=e970957w" rel="nofollow"><img src="https://www.afi-b.com/upload_image/16056-1749401126-3.png" width="250" height="250" style="border:none;" alt="コールドクター" /></a><img src="https://t.afi-b.com/lead/R160568/e970957w/c518449J" width="1" height="1" style="border:none;" />
+<a href="https://t.afi-b.com/visit.php?a=R160568-k518453u&p=e970957w" rel="nofollow"><img src="https://www.afi-b.com/upload_image/16056-1752914626-3.png" width="468" height="60" style="border:none;" alt="コールドクター" /></a><img src="https://t.afi-b.com/lead/R160568/e970957w/k518453u" width="1" height="1" style="border:none;" />
 {{</* /affiliate */>}}
 ```
 

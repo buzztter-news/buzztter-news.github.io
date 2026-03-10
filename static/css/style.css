@@ -240,6 +240,8 @@ img { max-width: 100%; height: auto; }
 
 /* === Ad Slots === */
 .ad-slot { margin: 24px 0; min-height: 50px; text-align: center; }
+.ad-title-top { margin: 0 0 16px; }
+.ad-title-top img { max-width: 100%; height: auto; }
 .ad-slot img { max-width: 100%; height: auto; }
 .ad-label { display: block; font-size: 10px; color: #999; letter-spacing: 0.05em; margin-bottom: 4px; }
 .ad-middle img, .ad-bottom img { max-width: 480px; }
