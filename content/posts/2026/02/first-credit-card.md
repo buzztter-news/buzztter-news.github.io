@@ -8,6 +8,7 @@ tags: ["クレジットカード", "大学生", "新生活", "年会費無料", 
 image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop"
 no_ad_bottom: true
 clean_ads: true
+aliases: ["/posts/2026/02/university-student-first-credit-card/"]
 sticky_ad: true
 ---
 
