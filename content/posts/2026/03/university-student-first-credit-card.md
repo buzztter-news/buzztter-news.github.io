@@ -5,7 +5,7 @@ draft: false
 description: "大学生になったら持っておきたいクレジットカード。年会費無料で特典充実のおすすめカードと選び方のポイントを解説します。"
 categories: ["生活・雑学"]
 tags: ["クレジットカード", "大学生", "新生活", "年会費無料", "節約"]
-image: ""
+image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=630&fit=crop"
 no_ad_bottom: true
 clean_ads: true
 ---
