@@ -1,3 +1,35 @@
+/* === FaceSwitch Banner Link === */
+.fs-banner-link {
+  display: block;
+  text-decoration: none;
+  margin: 0 auto;
+  max-width: 360px;
+}
+.fs-banner {
+  display: block;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #fff;
+  text-align: center;
+  padding: 18px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.fs-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+.fs-banner small {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64b5f6;
+  letter-spacing: 1px;
+}
+
 /* === CTA Box === */
 .cta-box {
   background: #f8fafb;

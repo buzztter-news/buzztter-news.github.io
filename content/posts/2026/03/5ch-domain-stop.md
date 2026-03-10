@@ -24,7 +24,7 @@ image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&f
 {{< tweet user="tkzwgrs" id="2029836164476387367" >}}
 
 {{< affiliate >}}
-<a href='https://mttag.com/s/i946xt1euvg' rel='nofollow'><strong>無料で顔写真からAVを作ってみる</strong></a><img src='https://mttag.com/banner/i946xt1euvg' width='1' height='1' border='0' />
+<a href='https://mttag.com/s/i946xt1euvg' rel='nofollow' target='_blank' class='fs-banner-link'><span class='fs-banner'>顔写真1枚でAI動画生成<br><small>FACESWITCH 無料お試し →</small></span></a><img src='https://mttag.com/banner/i946xt1euvg' width='1' height='1' border='0' style='display:none;' />
 {{< /affiliate >}}
 
 これを受けて、ワトキンス氏は代替ドメイン**「5ch.io」への移行**をユーザーに呼びかけています。
