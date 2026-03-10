@@ -240,13 +240,28 @@ img { max-width: 100%; height: auto; }
 
 /* === Ad Slots === */
 .ad-slot { margin: 24px 0; min-height: 50px; text-align: center; }
+.ad-slot img { max-width: 100%; height: auto; }
 .ad-label { display: block; font-size: 10px; color: #999; letter-spacing: 0.05em; margin-bottom: 4px; }
-.affiliate-banner { position: relative; }
-.affiliate-banner .ad-label { display: block; font-size: 10px; color: #999; letter-spacing: 0.05em; margin-bottom: 4px; text-align: center; }
+.ad-middle img, .ad-bottom img { max-width: 480px; }
+.ad-sidebar img { max-width: 100%; }
+
+/* サイドバーテキスト広告 */
+.sidebar-text-ad {
+  display: block;
+  padding: 12px;
+  background: #f8f8f8;
+  border-left: 3px solid #e53935;
+  margin-bottom: 4px;
+  color: #222;
+}
+.sidebar-text-ad:hover { background: #f0f0f0; opacity: 1; }
+.sidebar-text-ad-label { display: block; font-size: 10px; color: #e53935; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 2px; }
+.sidebar-text-ad-title { font-size: 0.85rem; font-weight: 700; }
 
 /* === Affiliate Banner === */
 .affiliate-banner { margin: 24px 0; text-align: center; }
-.affiliate-banner img { max-width: 100%; height: auto; }
+.affiliate-banner .ad-label { display: block; font-size: 10px; color: #999; letter-spacing: 0.05em; margin-bottom: 4px; text-align: center; }
+.affiliate-banner img { max-width: 480px; width: 100%; height: auto; }
 .affiliate-banner a { display: inline-block; }
 
 /* === Footer === */
