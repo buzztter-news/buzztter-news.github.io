@@ -8,7 +8,7 @@
 {{ end }}
 
 {{ define "main" }}
-{{ partial "modal-ad.html" . }}
+{{ if not .Params.clean_ads }}{{ partial "modal-ad.html" . }}{{ end }}
 <div class="page-layout">
   <article class="content-area article-single">
 
@@ -56,7 +56,7 @@
     </footer>
   </article>
 
-  {{ partial "sidebar.html" . }}
+  {{ if not .Params.clean_ads }}{{ partial "sidebar.html" . }}{{ end }}
 </div>
 
 {{ $related := .Site.RegularPages.Related . | first 5 }}
