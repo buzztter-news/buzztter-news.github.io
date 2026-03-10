@@ -13,19 +13,27 @@
 
 /* === Table of Contents === */
 .toc {
-  background: #f8f9fa;
-  border: 1px solid #e2e6ea;
-  border-radius: 6px;
-  padding: 18px 22px;
-  margin-bottom: 30px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 8px;
+  padding: 20px 24px 16px;
+  margin-bottom: 32px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 .toc-header {
   font-weight: 700;
-  font-size: 0.95em;
-  color: #333;
-  margin-bottom: 10px;
-  padding-bottom: 8px;
+  font-size: 1em;
+  color: #222;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
   border-bottom: 2px solid #e74c3c;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.toc-header::before {
+  content: "\1F4CB";
+  font-size: 1.1em;
 }
 .toc nav, .toc > ul, .toc #TableOfContents > ul {
   list-style: none;
@@ -37,30 +45,55 @@
   padding-left: 0;
   margin: 0;
 }
+.toc #TableOfContents > ul {
+  counter-reset: toc-counter;
+}
 .toc #TableOfContents > ul > li {
-  padding: 6px 0;
-  border-bottom: 1px dotted #ddd;
+  counter-increment: toc-counter;
+  padding: 8px 0;
+  border-bottom: 1px solid #e8e8e8;
 }
 .toc #TableOfContents > ul > li:last-child { border-bottom: none; }
 .toc #TableOfContents > ul > li > a {
   color: #333;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.93em;
-  display: block;
+  font-size: 0.94em;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  line-height: 1.5;
+  transition: color 0.15s;
+}
+.toc #TableOfContents > ul > li > a::before {
+  content: counter(toc-counter) ".";
+  color: #e74c3c;
+  font-weight: 700;
+  flex-shrink: 0;
+  min-width: 20px;
 }
 .toc #TableOfContents > ul > li > a:hover { color: #e74c3c; }
 .toc #TableOfContents > ul > li > ul {
-  padding-left: 16px;
-  margin-top: 4px;
+  padding-left: 28px;
+  margin-top: 6px;
 }
 .toc #TableOfContents > ul > li > ul > li {
-  padding: 3px 0;
+  padding: 4px 0;
+  position: relative;
+}
+.toc #TableOfContents > ul > li > ul > li::before {
+  content: "─";
+  color: #ccc;
+  position: absolute;
+  left: -16px;
+  font-size: 0.8em;
 }
 .toc #TableOfContents > ul > li > ul > li > a {
-  color: #666;
+  color: #555;
   text-decoration: none;
   font-size: 0.88em;
+  line-height: 1.5;
+  transition: color 0.15s;
 }
 .toc #TableOfContents > ul > li > ul > li > a:hover { color: #e74c3c; }
 
