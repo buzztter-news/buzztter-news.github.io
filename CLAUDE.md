@@ -80,20 +80,25 @@ image: "https://images.unsplash.com/photo-XXXXX?w=1200&h=630&fit=crop"
 
 ## 広告バナー管理（2026-03現在）
 
-### 登録バナー一覧
-| 名前 | 配置 | リンク |
-|------|------|--------|
-| FaceSwitch | ad-bottom, 記事内affiliate（全ページに散りばめる） | mttag: `i946xt1euvg` |
-| QuickS | ad-sidebar（PC右側固定） | `https://quick-s.jp/?afid=ma7pyy&merchant_name=Quicks&token=ff0RZDk&visitor_id=69aecab92c6c7f551b306fcb` |
-| mttag新規 | ad-sidebar（PC右側固定） | `https://mttag.com/s/IwnrBJS4f5E` |
+### 広告枠一覧（2026-03-11現在）
 
-### スマホ限定インタースティシャル広告
-- `ad-interstitial-mobile.html` で自動表示（single.htmlに組み込み済み）
-- **スマホ（768px以下）のみ**表示、PCでは非表示
-- **50%の確率**でランダム表示（毎回ではない）
-- ページ表示から**8秒後**に下からスライドイン
-- **除外記事**: エポスカード記事（`university-student-first-credit-card`）、FACESWITCH記事（`faceswitch-ai-review`）
-- A8.net フレッツ光バナー（728x90）
+| 枠名 | ファイル | 表示条件 | 内容 |
+|------|----------|----------|------|
+| **モーダル広告** | `modal-ad.html` | 全記事（clean_ads除外）、ページ読み込み時 | A8 250x250バナー。×ボタン3秒遅延＋極小半透明 |
+| **スマートバナー** | `smart-banner.html` | 全ページ（clean_ads除外）、上部固定 | Freecashアプリ風バナー |
+| **ad-middle** | `ad-middle.html` | `{{</* ad-middle */>}}`挿入箇所 | FACESWITCH記事へのテキストリンク |
+| **ad-bottom** | `ad-bottom.html` | single.htmlテンプレート自動挿入 | FaceSwitch mttagテキストリンク |
+| **affiliate** | `affiliate.html` ショートコード | 記事内手動配置 | FaceSwitch mttagテキストリンク |
+| **サイドバー常設1** | `ad-sidebar.html` | PC右側固定 | mttag バナー（IwnrBJS4f5E） |
+| **サイドバー常設2** | `ad-sidebar.html` | PC右側固定 | A8 フレッツ光 600x500バナー |
+| **サイドバー常設3** | `ad-sidebar.html` | PC右側固定 | クイック現金サービス mttagテキストリンク |
+| **サイドバー縦長ランダム** | `ad-sidebar.html` | PC右側、50%ランダム | A8 160x600縦長バナー |
+| **スマホインタースティシャル** | `ad-interstitial-mobile.html` | スマホ限定、50%ランダム、8秒後表示 | A8バナー2種ランダム出し分け（728x90 / 468x60） |
+
+### 除外ルール
+- `clean_ads: true` → モーダル広告・スマートバナーを非表示
+- `no_ad_bottom: true` → ad-bottomを非表示
+- スマホインタースティシャルは `university-student-first-credit-card` と `faceswitch-ai-review` を除外
 
 ### 広告配置ルール
 - **FaceSwitch（必須）**: 全記事に最低2箇所、最大3箇所。ad-bottom + 記事内affiliate。エロ・恋愛・ゴシップ系は+1箇所追加
