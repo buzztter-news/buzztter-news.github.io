@@ -32,6 +32,13 @@
     </div>
     {{ end }}{{ end }}
 
+    {{ if .TableOfContents }}
+    <nav class="toc">
+      <div class="toc-header">この記事の内容</div>
+      {{ .TableOfContents }}
+    </nav>
+    {{ end }}
+
     <div class="article-body">
       {{ .Content }}
     </div>

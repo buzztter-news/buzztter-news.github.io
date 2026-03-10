@@ -11,6 +11,59 @@
 }
 .notice-box strong { color: #333; }
 
+/* === Table of Contents === */
+.toc {
+  background: #f8f9fa;
+  border: 1px solid #e2e6ea;
+  border-radius: 6px;
+  padding: 18px 22px;
+  margin-bottom: 30px;
+}
+.toc-header {
+  font-weight: 700;
+  font-size: 0.95em;
+  color: #333;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e74c3c;
+}
+.toc nav, .toc > ul, .toc #TableOfContents > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.toc #TableOfContents ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.toc #TableOfContents > ul > li {
+  padding: 6px 0;
+  border-bottom: 1px dotted #ddd;
+}
+.toc #TableOfContents > ul > li:last-child { border-bottom: none; }
+.toc #TableOfContents > ul > li > a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.93em;
+  display: block;
+}
+.toc #TableOfContents > ul > li > a:hover { color: #e74c3c; }
+.toc #TableOfContents > ul > li > ul {
+  padding-left: 16px;
+  margin-top: 4px;
+}
+.toc #TableOfContents > ul > li > ul > li {
+  padding: 3px 0;
+}
+.toc #TableOfContents > ul > li > ul > li > a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.88em;
+}
+.toc #TableOfContents > ul > li > ul > li > a:hover { color: #e74c3c; }
+
 /* === Reset & Base === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body {
