@@ -344,6 +344,19 @@ img { max-width: 100%; height: auto; }
 .ad-slot img { max-width: 100%; height: auto; }
 .ad-label { display: block; font-size: 10px; color: #999; letter-spacing: 0.05em; margin-bottom: 4px; }
 .ad-middle img, .ad-bottom img { max-width: 480px; }
+.ad-middle-link {
+  display: block;
+  background: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-left: 4px solid #e74c3c;
+  padding: 14px 18px;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: background 0.15s;
+}
+.ad-middle-link:hover { background: #f0f0f0; }
 .ad-sidebar img { max-width: 100%; }
 
 /* サイドバーテキスト広告 */
