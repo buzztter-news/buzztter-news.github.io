@@ -1,3 +1,38 @@
+/* === CTA Box === */
+.cta-box {
+  background: #f8fafb;
+  border: 2px solid #0a8f3c;
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  margin: 32px 0;
+}
+.cta-lead {
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
+  margin: 0 0 16px;
+}
+.cta-button {
+  display: inline-block;
+  background: #0a8f3c;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 17px;
+  font-weight: 800;
+  padding: 14px 32px;
+  border-radius: 8px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+.cta-button:hover { background: #077a32; color: #fff !important; }
+.cta-button:active { transform: scale(0.98); }
+.cta-note {
+  font-size: 12px;
+  color: #888;
+  margin: 12px 0 0;
+}
+
 /* === Notice Box === */
 .notice-box {
   background: #f0f4f8;
