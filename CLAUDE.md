@@ -77,11 +77,16 @@ image: ""
 | QuickS | ad-sidebar（PC右側固定） | `https://quick-s.jp/?afid=ma7pyy&merchant_name=Quicks&token=ff0RZDk&visitor_id=69aecab92c6c7f551b306fcb` |
 | mttag新規 | ad-sidebar（PC右側固定） | `https://mttag.com/s/IwnrBJS4f5E` |
 
+### FaceSwitch配置ルール（必須）
+- **全記事に最低2箇所**: ad-middle + ad-bottom（テンプレートpartialで自動挿入）
+- **エロ・恋愛・ゴシップ系は3箇所**: 上記 + 記事内affiliateショートコード1箇所（ツイート直下 or 感情が動くポイントの直後）
+- 導線リンク（PICKUP）も全記事に設置
+
 ### 記事内affiliateショートコードの使い方
-エロ・恋愛系の話題、または感情が動くポイントの直後にFaceSwitchバナーを挿入:
+エロ・恋愛系の話題、または感情が動くポイントの直後にFaceSwitchを挿入:
 ```
 {{</* affiliate */>}}
-<a href='FaceSwitchリンク' rel='nofollow' target='_blank'><img src='https://mttag.com/banner/lVM3LgiRzrQ' alt='FaceSwitch' style='max-width:100%;height:auto;' border='0' /></a>
+<a href='https://mttag.com/s/i946xt1euvg' rel='nofollow'><strong>無料で顔写真からAVを作ってみる</strong></a><img src='https://mttag.com/banner/i946xt1euvg' width='1' height='1' border='0' />
 {{</* /affiliate */>}}
 ```
 

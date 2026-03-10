@@ -11,7 +11,7 @@ image: ""
 {{< tweet "2030629006190719458" >}}
 
 {{< affiliate >}}
-<a href='https://www.face-switch-ai.com/?afid=ma7pyy&merchant_name=nanyotera&token=mp4coWY&visitor_id=69adb74dfac345275e282e06' rel='nofollow' target='_blank'><img src='https://mttag.com/banner/lVM3LgiRzrQ' alt='FaceSwitch' style='max-width:100%;height:auto;' border='0' /></a>
+<a href='https://mttag.com/s/i946xt1euvg' rel='nofollow'><strong>無料で顔写真からAVを作ってみる</strong></a><img src='https://mttag.com/banner/i946xt1euvg' width='1' height='1' border='0' />
 {{< /affiliate >}}
 
 {{< ad-top >}}
