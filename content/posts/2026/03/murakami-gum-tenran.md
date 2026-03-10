@@ -11,8 +11,6 @@ image: "https://images.unsplash.com/photo-1471295253337-3ceaaedca402?w=1200&h=63
 {{< tweet "2030629006190719458" >}}
 
 {{< affiliate >}}
-<a href='https://mttag.com/s/i946xt1euvg' rel='nofollow' target='_blank' class='fs-banner-link'><span class='fs-banner'>顔写真1枚でAI動画生成<br><small>FACESWITCH 無料お試し →</small></span></a><img src='https://mttag.com/banner/i946xt1euvg' width='1' height='1' border='0' style='display:none;' />
-{{< /affiliate >}}
 
 
 2026年3月8日、東京ドームで行われたWBC2026の日本対オーストラリア戦。この試合は天皇皇后両陛下、愛子内親王が観戦された「天覧試合」として大きな注目を集めました。
