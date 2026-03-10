@@ -1,29 +1,12 @@
 {
   "ads": [
     {
-      "id": "freecash",
-      "name": "freecash",
-      "placement": "ad-top（モバイルのみ）",
-      "link": "https://freecash.com/r/2ENQLF",
-      "bannerImg": "https://mttag.com/banner/i946xt1euvg",
-      "active": true
-    },
-    {
       "id": "faceswitch",
       "name": "FaceSwitch",
       "placement": "ad-bottom, 記事内affiliate",
       "link": "https://mttag.com/s/i946xt1euvg",
       "bannerImg": "",
       "type": "text",
-      "active": true
-    },
-    {
-      "id": "colddoctor",
-      "name": "コールドクター(マンジャロ)",
-      "placement": "記事内affiliate（主婦・生活・健康系）",
-      "link": "https://t.afi-b.com/visit.php?a=R160568-c518449J&p=e970957w",
-      "bannerImg": "https://www.afi-b.com/upload_image/16056-1749401126-3.png",
-      "type": "banner",
       "active": true
     },
     {

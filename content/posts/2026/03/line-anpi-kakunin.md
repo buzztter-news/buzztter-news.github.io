@@ -5,7 +5,7 @@ draft: false
 description: "LINEの安否確認機能はどのレベルの地震や災害で発動する？表示される条件、過去の発動事例、体験版との違いまで徹底解説します。"
 categories: ["IT・テクノロジー"]
 tags: ["LINE", "安否確認", "災害", "地震", "防災"]
-image: ""
+image: "https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1200&h=630&fit=crop"
 ---
 
 

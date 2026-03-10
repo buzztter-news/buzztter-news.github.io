@@ -5,7 +5,7 @@ draft: false
 description: "AI顔入れ替えアプリFACESWITCHの評判・口コミ・安全性・料金を徹底解説。実際の使い方や注意すべきポイントまでまとめました。"
 categories: ["IT・テクノロジー"]
 tags: ["FACESWITCH", "AI", "顔入れ替え", "ディープフェイク", "フェイススイッチ"]
-image: ""
+image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop"
 ---
 
 

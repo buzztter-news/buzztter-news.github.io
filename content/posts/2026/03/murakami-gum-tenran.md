@@ -5,7 +5,7 @@ draft: false
 description: "WBC2026天覧試合で村上宗隆選手がガムを噛みながら腕組みしていたと話題に。天皇ご一家の前での態度にネット上では賛否が真っ二つに分かれています。"
 categories: ["スポーツ"]
 tags: ["村上宗隆", "WBC2026", "天覧試合", "天皇陛下", "侍ジャパン"]
-image: ""
+image: "https://images.unsplash.com/photo-1471295253337-3ceaaedca402?w=1200&h=630&fit=crop"
 ---
 
 {{< tweet "2030629006190719458" >}}

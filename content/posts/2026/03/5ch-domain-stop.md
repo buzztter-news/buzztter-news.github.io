@@ -5,7 +5,7 @@ draft: false
 description: "巨大掲示板5ちゃんねるのドメイン「5ch.net」がレジストラにより停止される可能性が浮上。管理人ジム・ワトキンス氏が「5ch.io」への移行を発表し、ユーザーの間で混乱が広がっています。"
 categories: ["ネット"]
 tags: ["5ちゃんねる", "5ch", "ドメイン停止", "ジム・ワトキンス", "2ちゃんねる"]
-image: ""
+image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop"
 ---
 
 
