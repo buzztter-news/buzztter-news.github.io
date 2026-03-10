@@ -6,6 +6,7 @@ description: "AI顔入れ替えアプリFACESWITCHの評判・口コミ・安全
 categories: ["IT・テクノロジー"]
 tags: ["FACESWITCH", "AI", "顔入れ替え", "ディープフェイク", "フェイススイッチ"]
 image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&h=630&fit=crop"
+modal_ad: "faceswitch"
 ---
 
 

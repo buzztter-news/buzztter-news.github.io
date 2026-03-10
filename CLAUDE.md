@@ -84,7 +84,7 @@ image: "https://images.unsplash.com/photo-XXXXX?w=1200&h=630&fit=crop"
 
 | 枠名 | ファイル | 表示条件 | 内容 |
 |------|----------|----------|------|
-| **モーダル広告** | `modal-ad.html` | 全記事（clean_ads除外）、ページ読み込み時 | A8 250x250バナー。×ボタン3秒遅延＋極小半透明 |
+| **モーダル広告** | `modal-ad.html` | 全記事（clean_ads除外）、ページ読み込み時 | `modal_ad: "faceswitch"` → FaceSwitchバナー / 未指定 → ポイ活A8バナー。×ボタン3秒遅延＋極小半透明 |
 | **スマートバナー** | `smart-banner.html` | 全ページ（clean_ads除外）、上部固定 | Freecashアプリ風バナー |
 | **ad-middle** | `ad-middle.html` | `{{</* ad-middle */>}}`挿入箇所 | FACESWITCH記事へのテキストリンク |
 | **ad-bottom** | `ad-bottom.html` | single.htmlテンプレート自動挿入 | FaceSwitch バナー風CTA |

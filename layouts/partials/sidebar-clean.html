@@ -1,0 +1,19 @@
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <h3>カテゴリ</h3>
+    <ul class="category-list">
+      {{ range .Site.Taxonomies.categories }}
+      <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }} ({{ .Count }})</a></li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <div class="sidebar-section">
+    <h3>人気記事</h3>
+    <ul class="popular-list">
+      {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </div>
+</aside>

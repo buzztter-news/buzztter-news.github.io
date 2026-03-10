@@ -16,7 +16,7 @@
     animation: modalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     text-align: center;
   }
-  .modal-ad img { max-width: 280px; width: 100%; height: auto; }
+  .modal-ad img { max-width: 300px; width: 100%; height: auto; }
   .modal-close {
     position: absolute;
     top: -14px; right: -14px;
@@ -52,10 +52,13 @@
       <line x1="7" y1="7" x2="17" y2="17"/><line x1="17" y1="7" x2="7" y2="17"/>
     </svg>
   </button>
+  {{ if eq (.Params.modal_ad | default "poikatu") "faceswitch" }}
   <a href='https://mttag.com/s/i946xt1euvg' rel='nofollow' target='_blank'><img src='https://mttag.com/banner/i946xt1euvg' alt='FACESWITCH' width='360' height='360' border='0' style='max-width:100%;height:auto;'></a>
+  {{ else }}
+  <a href="https://px.a8.net/svt/ejp?a8mat=4AZE01+4P34KY+3NEK+BYLJL" rel="nofollow" target="_blank"><img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=260311969284&wid=001&eno=01&mid=s00000017030002009000&mc=1" style="max-width:100%;height:auto;"></a><img border="0" width="1" height="1" src="https://www13.a8.net/0.gif?a8mat=4AZE01+4P34KY+3NEK+BYLJL" alt="" style="display:none;">
+  {{ end }}
 </div>
 <script>
-// ×ボタンを3秒後にフェードイン表示
 setTimeout(function(){
   var btn = document.getElementById('modalClose');
   if(btn) btn.classList.add('show');
