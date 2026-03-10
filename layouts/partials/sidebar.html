@@ -8,7 +8,7 @@
     </ul>
   </div>
 
-  {{ partial "ad-sidebar.html" . }}
+  {{ if not .Params.clean_ads }}{{ partial "ad-sidebar.html" . }}{{ end }}
 
   <div class="sidebar-section">
     <h3>人気記事</h3>

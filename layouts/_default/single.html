@@ -56,7 +56,7 @@
     </footer>
   </article>
 
-  {{ if not .Params.clean_ads }}{{ partial "sidebar.html" . }}{{ end }}
+  {{ partial "sidebar.html" . }}
 </div>
 
 {{ $related := .Site.RegularPages.Related . | first 5 }}
