@@ -14,7 +14,7 @@ modal_ad: "faceswitch"
 この記事では、原因と具体的な解決方法をわかりやすく解説します。
 
 <div class="mobile-only-ad">
-<a href="https://al.dmm.co.jp/?af_id=hamburger-004&ch=lc_banner&ch_id=design%3DA%26size%3DS&lurl=https%3A%2F%2Fwww.dmm.co.jp%2Flive%2Fchat%2F-%2Fchat-room%2F%3D%2Fcharacter_id%3D958554%2F" rel="nofollow" target="_blank"><strong>今すぐライブチャットを見る →</strong></a>
+<a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fbook.dmm.co.jp%2Fproduct%2F6238047%2Fb915awnmg03939%2F&af_id=hamburger-004&ch=toolbar&ch_id=package_large" rel="sponsored" target="_blank"><strong>人気コミック「したがりデリバリー」を読む →</strong></a>
 </div>
 
 ## そもそも「動画保存ランキング」とは？
@@ -99,7 +99,7 @@ Googleアプリ内のブラウザ（WebView）は、SafariやChromeとは**Cooki
 {{< rawhtml >}}
 <div class="ad-duo">
   <a href='https://mttag.com/s/i946xt1euvg' rel='nofollow' target='_blank'><img src='https://mttag.com/banner/i946xt1euvg' alt='FACESWITCH' width='360' height='360' border='0'></a>
-  <iframe id="onlineBanner" frameborder="0" scrolling="no" width="300" height="250" src="https://livechat.dmm.co.jp/publicads?&size=S&design=A&affiliate_id=hamburger-004"></iframe>
+  <div style="margin:0;padding:5px;font-size:14px;word-break:break-all;"><a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fbook.dmm.co.jp%2Fproduct%2F6238047%2Fb915awnmg03939%2F&af_id=hamburger-004&ch=toolbar&ch_id=package_large" rel="sponsored"><img src="https://ebook-assets.dmm.co.jp/digital/e-book/b915awnmg03939/b915awnmg03939pl.jpg" alt="したがりデリバリー" style="max-width:100%;height:auto;"/></a></div>
 </div>
 {{< /rawhtml >}}
 
