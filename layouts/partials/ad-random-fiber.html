@@ -1,0 +1,16 @@
+{{ if not .Params.clean_ads }}
+<div class="ad-slot" id="randomFiberAd" style="display:none;text-align:center;margin:20px 0;">
+  <span class="ad-label">広告</span>
+  <div>
+    <a href="https://px.a8.net/svt/ejp?a8mat=4AZE01+1I6GTU+42Y0+62U35" rel="nofollow" target="_blank"><img border="0" width="300" height="250" alt="" src="https://www27.a8.net/svt/bgt?aid=260311969091&wid=001&eno=01&mid=s00000019044001021000&mc=1" style="max-width:100%;height:auto;"></a><img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4AZE01+1I6GTU+42Y0+62U35" alt="" style="display:none;">
+  </div>
+</div>
+<script>
+(function(){
+  if(Math.random() > 0.5){
+    var el = document.getElementById('randomFiberAd');
+    if(el) el.style.display = 'block';
+  }
+})();
+</script>
+{{ end }}

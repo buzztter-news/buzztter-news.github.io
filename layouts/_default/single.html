@@ -46,6 +46,8 @@
 
     {{ if not .Params.no_ad_bottom }}{{ partial "ad-bottom.html" . }}{{ end }}
 
+    {{ partial "ad-random-fiber.html" . }}
+
     <footer class="article-footer">
       {{ with .Params.tags }}
       <div class="article-tags">
