@@ -13,10 +13,6 @@ modal_ad: "faceswitch"
 
 この記事では、原因と具体的な解決方法をわかりやすく解説します。
 
-<div class="mobile-only-ad">
-<a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fbook.dmm.co.jp%2Fproduct%2F6238047%2Fb915awnmg03939%2F&af_id=hamburger-004&ch=toolbar&ch_id=package_large" rel="sponsored" target="_blank"><strong>人気コミック「したがりデリバリー」を読む →</strong></a>
-</div>
-
 ## そもそも「動画保存ランキング」とは？
 
 X（旧Twitter）で話題になっている動画をランキング形式でまとめているサービスです。中でも有名なのが**「ツイビデオ（TwiVideo）」**というサイト。
@@ -96,12 +92,7 @@ Googleアプリ内のブラウザ（WebView）は、SafariやChromeとは**Cooki
 
 同じ症状で困っている方は、ぜひこの方法を試してみてください。
 
-{{< rawhtml >}}
-<div class="ad-duo">
-  <a href='https://mttag.com/s/i946xt1euvg' rel='nofollow' target='_blank'><img src='https://mttag.com/banner/i946xt1euvg' alt='FACESWITCH' width='360' height='360' border='0'></a>
-  <div style="margin:0;padding:5px;font-size:14px;word-break:break-all;"><a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fbook.dmm.co.jp%2Fproduct%2F6238047%2Fb915awnmg03939%2F&af_id=hamburger-004&ch=toolbar&ch_id=package_large" rel="sponsored"><img src="https://ebook-assets.dmm.co.jp/digital/e-book/b915awnmg03939/b915awnmg03939pl.jpg" alt="したがりデリバリー" style="max-width:100%;height:auto;"/></a></div>
-</div>
-{{< /rawhtml >}}
+{{< affiliate >}}
 
 <a class="pickup-link" href="/posts/2026/03/faceswitch-ai-review/">
 <span class="pickup-link-label">PICK UP</span>
