@@ -17,9 +17,22 @@ Hugo静的サイト。GitHub Pagesでホスティング。
 1. **URLからネタ取得** — WebFetch/WebSearchでページ内容・関連情報を収集
 2. **ジャンル判定** — 内容からカテゴリを自動判定
 3. **サムネイル画像選定** — 記事内容に合ったUnsplashフリー素材のURLを設定（`image: ""` は禁止）
-4. **広告セット選択** — ジャンルに応じて配置を決定。**FaceSwitchは全記事に必ず最低2箇所、最大3箇所配置する（必須）**
-   - エロ・恋愛・芸能人ゴシップ系 → FaceSwitch×3（ad-middle + ad-bottom + affiliate1箇所）+ 導線リンク
-   - 一般ニュース・IT系 → FaceSwitch×2（ad-middle + ad-bottom）+ 導線リンク
+4. **属性判定 → 広告セット選択** — 記事内容から属性を自動判定し、広告配置を決定。**FaceSwitchは全記事に必ず最低2箇所、最大3箇所配置する（必須）**
+
+   **【属性A：エロ系】** `modal_ad: "faceswitch"` を設定
+   - 判定基準: アダルト動画・5ch・ディープフェイク・AI顔入れ替え・エロ保存系など
+   - 例: 5ch-domain-stop, faceswitch-ai-review, x-video-save-ranking
+   - FaceSwitch×3（ad-middle + ad-bottom + affiliate1箇所）+ 導線リンク
+
+   **【属性B：一般】** modal_ad未指定（デフォルト=ポイ活A8）
+   - 判定基準: ニュース速報・生活・スポーツ・IT障害・防災など
+   - 例: gasoline-price-surge, instagram-dm-bug, line-anpi-kakunin, murakami-gum
+   - FaceSwitch×2（ad-middle + ad-bottom）+ 導線リンク
+
+   **【属性C：アフィ記事】** `clean_ads: true` を設定
+   - 判定基準: 特定商材のLP・レビュー記事（回線アフィなど）
+   - 例: wifi-lag-fiber-solution
+   - 広告なし（記事自体がアフィリエイト）
 5. **記事生成** — 下記テンプレートに従い記事作成、広告挿入
 6. **目次自動生成** — H2/H3見出しから目次が自動表示される（テンプレート側で対応済み、記事内の作業不要）
 7. **ビルド確認** — `hugo` でエラーなしを確認
